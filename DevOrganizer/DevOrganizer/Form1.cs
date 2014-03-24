@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.WindowsAPICodePack;
+using Microsoft.WindowsAPICodePack.Shell;
 
 namespace DevOrganizer
 {
@@ -14,6 +16,11 @@ namespace DevOrganizer
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void explorerBrowser1_Load(object sender, EventArgs e)
+        {
+            explorerBrowser1.Navigate((ShellObject)KnownFolders.Desktop);
         }
 
     }

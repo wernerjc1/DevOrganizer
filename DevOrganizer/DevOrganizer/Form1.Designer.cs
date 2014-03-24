@@ -34,11 +34,11 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.explorerBrowser1 = new Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.explorerBrowser1 = new Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -99,6 +99,18 @@
             this.tabPage1.Text = "Add Project";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // explorerBrowser1
+            // 
+            this.explorerBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.explorerBrowser1.Location = new System.Drawing.Point(0, 43);
+            this.explorerBrowser1.Name = "explorerBrowser1";
+            this.explorerBrowser1.PropertyBagName = "Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser";
+            this.explorerBrowser1.Size = new System.Drawing.Size(738, 297);
+            this.explorerBrowser1.TabIndex = 5;
+            this.explorerBrowser1.Load += new System.EventHandler(this.explorerBrowser1_Load);
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(0, 0);
@@ -115,7 +127,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.tabPage2.Size = new System.Drawing.Size(734, 332);
+            this.tabPage2.Size = new System.Drawing.Size(734, 340);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Database View";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -139,17 +151,6 @@
             this.label1.Size = new System.Drawing.Size(45, 14);
             this.label1.TabIndex = 3;
             this.label1.Text = "Search";
-            // 
-            // explorerBrowser1
-            // 
-            this.explorerBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.explorerBrowser1.Location = new System.Drawing.Point(0, 43);
-            this.explorerBrowser1.Name = "explorerBrowser1";
-            this.explorerBrowser1.PropertyBagName = "Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser";
-            this.explorerBrowser1.Size = new System.Drawing.Size(738, 297);
-            this.explorerBrowser1.TabIndex = 5;
             // 
             // Form1
             // 

@@ -33,16 +33,16 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.addTab = new System.Windows.Forms.TabPage();
             this.explorerBrowser1 = new Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser();
             this.button1 = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DatabaseTab = new System.Windows.Forms.TabPage();
+            this.SearchBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.addTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -78,8 +78,8 @@
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.addTab);
+            this.tabControl1.Controls.Add(this.DatabaseTab);
             this.tabControl1.Location = new System.Drawing.Point(0, 65);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.tabControl1.Name = "tabControl1";
@@ -87,18 +87,18 @@
             this.tabControl1.Size = new System.Drawing.Size(717, 367);
             this.tabControl1.TabIndex = 1;
             // 
-            // tabPage1
+            // addTab
             // 
-            this.tabPage1.Controls.Add(this.explorerBrowser1);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 23);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.tabPage1.Size = new System.Drawing.Size(709, 340);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Add Project";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.addTab.Controls.Add(this.explorerBrowser1);
+            this.addTab.Controls.Add(this.button1);
+            this.addTab.Location = new System.Drawing.Point(4, 23);
+            this.addTab.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.addTab.Name = "addTab";
+            this.addTab.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.addTab.Size = new System.Drawing.Size(709, 340);
+            this.addTab.TabIndex = 0;
+            this.addTab.Text = "Add Project";
+            this.addTab.UseVisualStyleBackColor = true;
             // 
             // explorerBrowser1
             // 
@@ -122,25 +122,25 @@
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // DatabaseTab
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 23);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.tabPage2.Size = new System.Drawing.Size(734, 340);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Database View";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.DatabaseTab.Location = new System.Drawing.Point(4, 23);
+            this.DatabaseTab.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.DatabaseTab.Name = "DatabaseTab";
+            this.DatabaseTab.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.DatabaseTab.Size = new System.Drawing.Size(709, 340);
+            this.DatabaseTab.TabIndex = 1;
+            this.DatabaseTab.Text = "Database View";
+            this.DatabaseTab.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // SearchBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.SearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(457, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 20);
-            this.textBox1.TabIndex = 2;
+            this.SearchBox.Location = new System.Drawing.Point(457, 46);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(191, 20);
+            this.SearchBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -162,6 +162,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "GO";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.onSearchButtonClick);
             // 
             // Form1
             // 
@@ -171,7 +172,7 @@
             this.ClientSize = new System.Drawing.Size(717, 432);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -184,7 +185,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.addTab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,10 +198,10 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage addTab;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TabPage DatabaseTab;
+        private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Label label1;
         private Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser explorerBrowser1;
         private System.Windows.Forms.Button button2;

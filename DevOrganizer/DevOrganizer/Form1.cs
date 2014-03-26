@@ -37,10 +37,16 @@ namespace DevOrganizer
                 {
                     try
                     {
-                        string newPath = Path.GetFullPath(SearchBox.Text);// Directory.GetCurrentDirectory();
-                        //explorerBrowser1.
-                        //newPath += "\\";
-                        //newPath += SearchBox.Text;
+                        string newPath = "..";// = Path.GetFullPath(SearchBox.Text);// Directory.GetCurrentDirectory();                       
+                        
+                        foreach (ShellObject shobj in this.explorerBrowser1.NavigationLog.Locations)
+                        {
+                            newPath += "\\";
+                            newPath += shobj.Name;
+                            newPath += "\\";
+                        }
+                        newPath += SearchBox.Text;
+
                         addTab.Text = newPath;
                         explorerBrowser1.Navigate(ShellFileSystemFolder.FromFolderPath(newPath));
 

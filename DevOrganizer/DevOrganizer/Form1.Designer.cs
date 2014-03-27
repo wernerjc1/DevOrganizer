@@ -40,9 +40,14 @@
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.addTab.SuspendLayout();
+            this.DatabaseTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -84,7 +89,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(717, 367);
+            this.tabControl1.Size = new System.Drawing.Size(717, 410);
             this.tabControl1.TabIndex = 1;
             // 
             // addTab
@@ -124,11 +129,14 @@
             // 
             // DatabaseTab
             // 
+            this.DatabaseTab.Controls.Add(this.propertyGrid1);
+            this.DatabaseTab.Controls.Add(this.label2);
+            this.DatabaseTab.Controls.Add(this.dataGridView1);
             this.DatabaseTab.Location = new System.Drawing.Point(4, 23);
             this.DatabaseTab.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.DatabaseTab.Name = "DatabaseTab";
             this.DatabaseTab.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.DatabaseTab.Size = new System.Drawing.Size(709, 340);
+            this.DatabaseTab.Size = new System.Drawing.Size(709, 383);
             this.DatabaseTab.TabIndex = 1;
             this.DatabaseTab.Text = "Database View";
             this.DatabaseTab.UseVisualStyleBackColor = true;
@@ -164,12 +172,38 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.onSearchButtonClick);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 7);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(693, 217);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 227);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 14);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Properties";
+            // 
+            // propertyGrid1
+            // 
+            this.propertyGrid1.HelpVisible = false;
+            this.propertyGrid1.Location = new System.Drawing.Point(8, 244);
+            this.propertyGrid1.Name = "propertyGrid1";
+            this.propertyGrid1.Size = new System.Drawing.Size(693, 131);
+            this.propertyGrid1.TabIndex = 2;
+            this.propertyGrid1.ToolbarVisible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(717, 432);
+            this.ClientSize = new System.Drawing.Size(717, 475);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SearchBox);
@@ -186,6 +220,9 @@
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.addTab.ResumeLayout(false);
+            this.DatabaseTab.ResumeLayout(false);
+            this.DatabaseTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,6 +242,9 @@
         private System.Windows.Forms.Label label1;
         private Microsoft.WindowsAPICodePack.Controls.WindowsForms.ExplorerBrowser explorerBrowser1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PropertyGrid propertyGrid1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

@@ -34,6 +34,16 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.addTab = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.addTagButton = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tagsListBox = new System.Windows.Forms.ListBox();
+            this.browseButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.FolderOption = new System.Windows.Forms.RadioButton();
+            this.FileOption = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.DatabaseTab = new System.Windows.Forms.TabPage();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
@@ -42,23 +52,21 @@
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.FileOption = new System.Windows.Forms.RadioButton();
-            this.FolderOption = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.browseButton = new System.Windows.Forms.Button();
-            this.tagsListBox = new System.Windows.Forms.ListBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.addTagButton = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.authorsListBox = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.addTab.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.DatabaseTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -105,6 +113,8 @@
             // 
             // addTab
             // 
+            this.addTab.Controls.Add(this.groupBox4);
+            this.addTab.Controls.Add(this.groupBox3);
             this.addTab.Controls.Add(this.groupBox2);
             this.addTab.Controls.Add(this.browseButton);
             this.addTab.Controls.Add(this.label3);
@@ -120,9 +130,104 @@
             this.addTab.Text = "Add Project";
             this.addTab.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.addTagButton);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.tagsListBox);
+            this.groupBox2.Location = new System.Drawing.Point(8, 84);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(228, 227);
+            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Add Tags";
+            // 
+            // addTagButton
+            // 
+            this.addTagButton.Location = new System.Drawing.Point(147, 19);
+            this.addTagButton.Name = "addTagButton";
+            this.addTagButton.Size = new System.Drawing.Size(75, 23);
+            this.addTagButton.TabIndex = 11;
+            this.addTagButton.Text = "Add";
+            this.addTagButton.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(6, 19);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(135, 20);
+            this.textBox2.TabIndex = 10;
+            // 
+            // tagsListBox
+            // 
+            this.tagsListBox.FormattingEnabled = true;
+            this.tagsListBox.ItemHeight = 14;
+            this.tagsListBox.Location = new System.Drawing.Point(6, 48);
+            this.tagsListBox.Name = "tagsListBox";
+            this.tagsListBox.Size = new System.Drawing.Size(216, 172);
+            this.tagsListBox.TabIndex = 9;
+            // 
+            // browseButton
+            // 
+            this.browseButton.Location = new System.Drawing.Point(453, 32);
+            this.browseButton.Name = "browseButton";
+            this.browseButton.Size = new System.Drawing.Size(75, 23);
+            this.browseButton.TabIndex = 8;
+            this.browseButton.Text = "Browse...";
+            this.browseButton.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(118, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 14);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Path";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(118, 35);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(329, 20);
+            this.textBox1.TabIndex = 6;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.FolderOption);
+            this.groupBox1.Controls.Add(this.FileOption);
+            this.groupBox1.Location = new System.Drawing.Point(8, 7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(104, 71);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Add by: ";
+            // 
+            // FolderOption
+            // 
+            this.FolderOption.AutoSize = true;
+            this.FolderOption.Location = new System.Drawing.Point(3, 40);
+            this.FolderOption.Name = "FolderOption";
+            this.FolderOption.Size = new System.Drawing.Size(60, 18);
+            this.FolderOption.TabIndex = 1;
+            this.FolderOption.TabStop = true;
+            this.FolderOption.Text = "Folder";
+            this.FolderOption.UseVisualStyleBackColor = true;
+            // 
+            // FileOption
+            // 
+            this.FileOption.AutoSize = true;
+            this.FileOption.Location = new System.Drawing.Point(3, 16);
+            this.FileOption.Name = "FileOption";
+            this.FileOption.Size = new System.Drawing.Size(44, 18);
+            this.FileOption.TabIndex = 0;
+            this.FileOption.TabStop = true;
+            this.FileOption.Text = "File";
+            this.FileOption.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(289, 339);
+            this.button1.Location = new System.Drawing.Point(301, 329);
             this.button1.MinimumSize = new System.Drawing.Size(113, 37);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 37);
@@ -201,100 +306,60 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.onSearchButtonClick);
             // 
-            // groupBox1
+            // groupBox3
             // 
-            this.groupBox1.Controls.Add(this.FolderOption);
-            this.groupBox1.Controls.Add(this.FileOption);
-            this.groupBox1.Location = new System.Drawing.Point(8, 7);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(104, 71);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Add by: ";
+            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Location = new System.Drawing.Point(242, 84);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(228, 227);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Description";
             // 
-            // FileOption
+            // textBox3
             // 
-            this.FileOption.AutoSize = true;
-            this.FileOption.Location = new System.Drawing.Point(3, 16);
-            this.FileOption.Name = "FileOption";
-            this.FileOption.Size = new System.Drawing.Size(44, 18);
-            this.FileOption.TabIndex = 0;
-            this.FileOption.TabStop = true;
-            this.FileOption.Text = "File";
-            this.FileOption.UseVisualStyleBackColor = true;
+            this.textBox3.Location = new System.Drawing.Point(6, 19);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(216, 201);
+            this.textBox3.TabIndex = 10;
             // 
-            // FolderOption
+            // groupBox4
             // 
-            this.FolderOption.AutoSize = true;
-            this.FolderOption.Location = new System.Drawing.Point(3, 40);
-            this.FolderOption.Name = "FolderOption";
-            this.FolderOption.Size = new System.Drawing.Size(60, 18);
-            this.FolderOption.TabIndex = 1;
-            this.FolderOption.TabStop = true;
-            this.FolderOption.Text = "Folder";
-            this.FolderOption.UseVisualStyleBackColor = true;
+            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.authorsListBox);
+            this.groupBox4.Location = new System.Drawing.Point(476, 84);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(228, 227);
+            this.groupBox4.TabIndex = 12;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Authors";
             // 
-            // textBox1
+            // button3
             // 
-            this.textBox1.Location = new System.Drawing.Point(118, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(329, 20);
-            this.textBox1.TabIndex = 6;
+            this.button3.Location = new System.Drawing.Point(147, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Add";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // textBox4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(118, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 14);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Path";
+            this.textBox4.Location = new System.Drawing.Point(6, 19);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(135, 20);
+            this.textBox4.TabIndex = 10;
             // 
-            // browseButton
+            // authorsListBox
             // 
-            this.browseButton.Location = new System.Drawing.Point(453, 32);
-            this.browseButton.Name = "browseButton";
-            this.browseButton.Size = new System.Drawing.Size(75, 23);
-            this.browseButton.TabIndex = 8;
-            this.browseButton.Text = "Browse...";
-            this.browseButton.UseVisualStyleBackColor = true;
-            // 
-            // tagsListBox
-            // 
-            this.tagsListBox.FormattingEnabled = true;
-            this.tagsListBox.ItemHeight = 14;
-            this.tagsListBox.Location = new System.Drawing.Point(6, 48);
-            this.tagsListBox.Name = "tagsListBox";
-            this.tagsListBox.Size = new System.Drawing.Size(216, 172);
-            this.tagsListBox.TabIndex = 9;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.addTagButton);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.tagsListBox);
-            this.groupBox2.Location = new System.Drawing.Point(8, 84);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(228, 227);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Add Tags";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(6, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 20);
-            this.textBox2.TabIndex = 10;
-            // 
-            // addTagButton
-            // 
-            this.addTagButton.Location = new System.Drawing.Point(147, 19);
-            this.addTagButton.Name = "addTagButton";
-            this.addTagButton.Size = new System.Drawing.Size(75, 23);
-            this.addTagButton.TabIndex = 11;
-            this.addTagButton.Text = "Add";
-            this.addTagButton.UseVisualStyleBackColor = true;
+            this.authorsListBox.FormattingEnabled = true;
+            this.authorsListBox.ItemHeight = 14;
+            this.authorsListBox.Location = new System.Drawing.Point(6, 48);
+            this.authorsListBox.Name = "authorsListBox";
+            this.authorsListBox.Size = new System.Drawing.Size(216, 172);
+            this.authorsListBox.TabIndex = 9;
             // 
             // Form1
             // 
@@ -319,13 +384,17 @@
             this.tabControl1.ResumeLayout(false);
             this.addTab.ResumeLayout(false);
             this.addTab.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.DatabaseTab.ResumeLayout(false);
             this.DatabaseTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,6 +426,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton FolderOption;
         private System.Windows.Forms.RadioButton FileOption;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ListBox authorsListBox;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
 

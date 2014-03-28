@@ -19,46 +19,11 @@ namespace DevOrganizer
             InitializeComponent();
         }
 
-        private void explorerBrowser1_Load(object sender, EventArgs e)
-        {
-            explorerBrowser1.Navigate((ShellObject)KnownFolders.Desktop);
-        }
-
         private void onSearchButtonClick(object sender, EventArgs e)
         {
             if (this.tabControl1.SelectedTab == addTab)
             {
-                //try
-                //{
-                //    // navigate to specific folder
-                //    explorerBrowser1.Navigate(ShellFileSystemFolder.FromFolderPath(SearchBox.Text));
-                //}
-                //catch
-                //{
-                    //try
-                    //{
-                        //String newPath = "";// = Path.GetFullPath(SearchBox.Text);// Directory.GetCurrentDirectory();                       
-
-                        //foreach (ShellObject shobj in this.explorerBrowser1.NavigationLog.Locations)
-                        //{
-                        //    newPath += "\\";
-                        //    newPath += shobj.Name;
-                        //    newPath += "\\";
-                        //}
-                        
-                        String newPath = SearchBox.Text;
-
-                        addTab.Text = newPath;
-                        //explorerBrowser1.Navigate(ShellFileSystemFolder.FromFolderPath(newPath));
-                        //explorerBrowser1.Navigate(ShellFileSystemFolder.FromParsingName(newPath));
-
-                        //explorerBrowser1.SelectedItems.Add(ShellObject.FromParsingName(newPath));
-                    //}
-                    //catch
-                    //{
-                    //    MessageBox.Show("Navigation not possible.");
-                    //}
-                //}
+                ;
             }
             else if (this.tabControl1.SelectedTab == DatabaseTab)
             {

@@ -36,14 +36,14 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.addTab = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.addAuthorButton = new System.Windows.Forms.Button();
+            this.authorsTextBox = new System.Windows.Forms.TextBox();
             this.authorsListBox = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.addTagButton = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tagsTextBox = new System.Windows.Forms.TextBox();
             this.tagsListBox = new System.Windows.Forms.ListBox();
             this.browseButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -139,8 +139,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.addAuthorButton);
+            this.groupBox4.Controls.Add(this.authorsTextBox);
             this.groupBox4.Controls.Add(this.authorsListBox);
             this.groupBox4.Location = new System.Drawing.Point(476, 84);
             this.groupBox4.Name = "groupBox4";
@@ -149,21 +149,22 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Authors";
             // 
-            // button3
+            // addAuthorButton
             // 
-            this.button3.Location = new System.Drawing.Point(147, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
+            this.addAuthorButton.Location = new System.Drawing.Point(147, 19);
+            this.addAuthorButton.Name = "addAuthorButton";
+            this.addAuthorButton.Size = new System.Drawing.Size(75, 23);
+            this.addAuthorButton.TabIndex = 11;
+            this.addAuthorButton.Text = "Add";
+            this.addAuthorButton.UseVisualStyleBackColor = true;
+            this.addAuthorButton.Click += new System.EventHandler(this.addAuthorButton_Click);
             // 
-            // textBox4
+            // authorsTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(135, 20);
-            this.textBox4.TabIndex = 10;
+            this.authorsTextBox.Location = new System.Drawing.Point(6, 19);
+            this.authorsTextBox.Name = "authorsTextBox";
+            this.authorsTextBox.Size = new System.Drawing.Size(135, 20);
+            this.authorsTextBox.TabIndex = 10;
             // 
             // authorsListBox
             // 
@@ -176,7 +177,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.descriptionTextBox);
             this.groupBox3.Location = new System.Drawing.Point(242, 84);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(228, 227);
@@ -184,18 +185,18 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Description";
             // 
-            // textBox3
+            // descriptionTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 19);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(216, 201);
-            this.textBox3.TabIndex = 10;
+            this.descriptionTextBox.Location = new System.Drawing.Point(6, 19);
+            this.descriptionTextBox.Multiline = true;
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(216, 201);
+            this.descriptionTextBox.TabIndex = 10;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.addTagButton);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.tagsTextBox);
             this.groupBox2.Controls.Add(this.tagsListBox);
             this.groupBox2.Location = new System.Drawing.Point(8, 84);
             this.groupBox2.Name = "groupBox2";
@@ -212,13 +213,14 @@
             this.addTagButton.TabIndex = 11;
             this.addTagButton.Text = "Add";
             this.addTagButton.UseVisualStyleBackColor = true;
+            this.addTagButton.Click += new System.EventHandler(this.addTagButton_Click);
             // 
-            // textBox2
+            // tagsTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 20);
-            this.textBox2.TabIndex = 10;
+            this.tagsTextBox.Location = new System.Drawing.Point(6, 19);
+            this.tagsTextBox.Name = "tagsTextBox";
+            this.tagsTextBox.Size = new System.Drawing.Size(135, 20);
+            this.tagsTextBox.TabIndex = 10;
             // 
             // tagsListBox
             // 
@@ -387,10 +389,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.onSearchButtonClick);
             // 
-            // folderBrowserDialog1
-            // 
-
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -450,7 +448,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button addTagButton;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tagsTextBox;
         private System.Windows.Forms.ListBox tagsListBox;
         private System.Windows.Forms.Button browseButton;
         private System.Windows.Forms.Label label3;
@@ -459,11 +457,11 @@
         private System.Windows.Forms.RadioButton FolderOption;
         private System.Windows.Forms.RadioButton FileOption;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button addAuthorButton;
+        private System.Windows.Forms.TextBox authorsTextBox;
         private System.Windows.Forms.ListBox authorsListBox;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox descriptionTextBox;
         private System.Windows.Forms.BindingSource devOrgDBDataSetBindingSource;
         private DevOrgDBDataSet devOrgDBDataSet;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;

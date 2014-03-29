@@ -33,6 +33,7 @@ namespace DevOrganizer
             if (FolderOption.Checked == true)
             {
                 folderBrowserDialog1.ShowDialog();
+                pathTextBox.Text = folderBrowserDialog1.SelectedPath;
             }
             else
             {
@@ -53,6 +54,22 @@ namespace DevOrganizer
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             pathTextBox.Text = openFileDialog1.FileName;
+        }
+
+        private void addTagButton_Click(object sender, EventArgs e)
+        {
+            if (tagsTextBox.Text != "")
+            {
+                tagsListBox.Items.Add(tagsTextBox.Text);
+            }
+        }
+
+        private void addAuthorButton_Click(object sender, EventArgs e)
+        {
+            if (authorsTextBox.Text != "")
+            {
+                authorsListBox.Items.Add(authorsTextBox.Text);
+            }           
         }
 
 

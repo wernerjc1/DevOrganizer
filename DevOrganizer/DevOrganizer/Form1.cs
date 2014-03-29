@@ -23,13 +23,40 @@ namespace DevOrganizer
         {
             if (this.tabControl1.SelectedTab == addTab)
             {
-                ;
+                this.tabControl1.SelectedTab = DatabaseTab;
             }
-            else if (this.tabControl1.SelectedTab == DatabaseTab)
+            this.tabControl1.SelectedTab.Text = SearchBox.Text;
+        }
+
+        private void browseButton_Click(object sender, EventArgs e)
+        {
+            if (FolderOption.Checked == true)
             {
-                DatabaseTab.Text = "HOOOO";
+                folderBrowserDialog1.ShowDialog();
+            }
+            else
+            {
+                openFileDialog1.ShowDialog();
             }
         }
+
+        private void FolderOption_Click(object sender, EventArgs e)
+        {
+            FileOption.Checked = false;
+        }
+
+        private void FileOption_Click(object sender, EventArgs e)
+        {
+            FolderOption.Checked = false;
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            pathTextBox.Text = openFileDialog1.FileName;
+        }
+
+
+
 
     }
 }

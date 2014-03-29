@@ -28,19 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gAYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.addTab = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.authorsListBox = new System.Windows.Forms.ListBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.addTagButton = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tagsListBox = new System.Windows.Forms.ListBox();
             this.browseButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pathTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.FolderOption = new System.Windows.Forms.RadioButton();
             this.FileOption = new System.Windows.Forms.RadioButton();
@@ -49,24 +56,23 @@
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.devOrgDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.devOrgDBDataSet = new DevOrganizer.DevOrgDBDataSet();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.authorsListBox = new System.Windows.Forms.ListBox();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.addTab.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.DatabaseTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -77,7 +83,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(717, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(720, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -96,6 +102,7 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // tabControl1
             // 
@@ -108,7 +115,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(717, 410);
+            this.tabControl1.Size = new System.Drawing.Size(720, 410);
             this.tabControl1.TabIndex = 1;
             // 
             // addTab
@@ -118,17 +125,72 @@
             this.addTab.Controls.Add(this.groupBox2);
             this.addTab.Controls.Add(this.browseButton);
             this.addTab.Controls.Add(this.label3);
-            this.addTab.Controls.Add(this.textBox1);
+            this.addTab.Controls.Add(this.pathTextBox);
             this.addTab.Controls.Add(this.groupBox1);
             this.addTab.Controls.Add(this.button1);
             this.addTab.Location = new System.Drawing.Point(4, 23);
             this.addTab.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.addTab.Name = "addTab";
             this.addTab.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.addTab.Size = new System.Drawing.Size(709, 383);
+            this.addTab.Size = new System.Drawing.Size(712, 383);
             this.addTab.TabIndex = 0;
             this.addTab.Text = "Add Project";
             this.addTab.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.authorsListBox);
+            this.groupBox4.Location = new System.Drawing.Point(476, 84);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(228, 227);
+            this.groupBox4.TabIndex = 12;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Authors";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(147, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Add";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(6, 19);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(135, 20);
+            this.textBox4.TabIndex = 10;
+            // 
+            // authorsListBox
+            // 
+            this.authorsListBox.FormattingEnabled = true;
+            this.authorsListBox.ItemHeight = 14;
+            this.authorsListBox.Location = new System.Drawing.Point(6, 48);
+            this.authorsListBox.Name = "authorsListBox";
+            this.authorsListBox.Size = new System.Drawing.Size(216, 172);
+            this.authorsListBox.TabIndex = 9;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Location = new System.Drawing.Point(242, 84);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(228, 227);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Description";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(6, 19);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(216, 201);
+            this.textBox3.TabIndex = 10;
             // 
             // groupBox2
             // 
@@ -175,6 +237,7 @@
             this.browseButton.TabIndex = 8;
             this.browseButton.Text = "Browse...";
             this.browseButton.UseVisualStyleBackColor = true;
+            this.browseButton.Click += new System.EventHandler(this.browseButton_Click);
             // 
             // label3
             // 
@@ -185,12 +248,12 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Path";
             // 
-            // textBox1
+            // pathTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(118, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(329, 20);
-            this.textBox1.TabIndex = 6;
+            this.pathTextBox.Location = new System.Drawing.Point(118, 35);
+            this.pathTextBox.Name = "pathTextBox";
+            this.pathTextBox.Size = new System.Drawing.Size(329, 20);
+            this.pathTextBox.TabIndex = 6;
             // 
             // groupBox1
             // 
@@ -210,13 +273,14 @@
             this.FolderOption.Name = "FolderOption";
             this.FolderOption.Size = new System.Drawing.Size(60, 18);
             this.FolderOption.TabIndex = 1;
-            this.FolderOption.TabStop = true;
             this.FolderOption.Text = "Folder";
             this.FolderOption.UseVisualStyleBackColor = true;
+            this.FolderOption.Click += new System.EventHandler(this.FolderOption_Click);
             // 
             // FileOption
             // 
             this.FileOption.AutoSize = true;
+            this.FileOption.Checked = true;
             this.FileOption.Location = new System.Drawing.Point(3, 16);
             this.FileOption.Name = "FileOption";
             this.FileOption.Size = new System.Drawing.Size(44, 18);
@@ -224,6 +288,7 @@
             this.FileOption.TabStop = true;
             this.FileOption.Text = "File";
             this.FileOption.UseVisualStyleBackColor = true;
+            this.FileOption.Click += new System.EventHandler(this.FileOption_Click);
             // 
             // button1
             // 
@@ -244,7 +309,7 @@
             this.DatabaseTab.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.DatabaseTab.Name = "DatabaseTab";
             this.DatabaseTab.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.DatabaseTab.Size = new System.Drawing.Size(709, 383);
+            this.DatabaseTab.Size = new System.Drawing.Size(712, 383);
             this.DatabaseTab.TabIndex = 1;
             this.DatabaseTab.Text = "Database View";
             this.DatabaseTab.UseVisualStyleBackColor = true;
@@ -269,17 +334,33 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.devOrgDBDataSetBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(8, 7);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(693, 217);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // devOrgDBDataSetBindingSource
+            // 
+            this.devOrgDBDataSetBindingSource.DataSource = this.devOrgDBDataSet;
+            this.devOrgDBDataSetBindingSource.Position = 0;
+            // 
+            // devOrgDBDataSet
+            // 
+            this.devOrgDBDataSet.DataSetName = "DevOrgDBDataSet";
+            this.devOrgDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // SearchBox
             // 
             this.SearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchBox.Location = new System.Drawing.Point(457, 46);
+            this.SearchBox.Location = new System.Drawing.Point(460, 46);
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.Size = new System.Drawing.Size(191, 20);
             this.SearchBox.TabIndex = 2;
@@ -289,7 +370,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(454, 29);
+            this.label1.Location = new System.Drawing.Point(457, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 14);
             this.label1.TabIndex = 3;
@@ -298,7 +379,7 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(654, 43);
+            this.button2.Location = new System.Drawing.Point(657, 43);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(51, 23);
             this.button2.TabIndex = 4;
@@ -306,67 +387,16 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.onSearchButtonClick);
             // 
-            // groupBox3
+            // folderBrowserDialog1
             // 
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Location = new System.Drawing.Point(242, 84);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(228, 227);
-            this.groupBox3.TabIndex = 11;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Description";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(6, 19);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(216, 201);
-            this.textBox3.TabIndex = 10;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.textBox4);
-            this.groupBox4.Controls.Add(this.authorsListBox);
-            this.groupBox4.Location = new System.Drawing.Point(476, 84);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(228, 227);
-            this.groupBox4.TabIndex = 12;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Authors";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(147, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(6, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(135, 20);
-            this.textBox4.TabIndex = 10;
-            // 
-            // authorsListBox
-            // 
-            this.authorsListBox.FormattingEnabled = true;
-            this.authorsListBox.ItemHeight = 14;
-            this.authorsListBox.Location = new System.Drawing.Point(6, 48);
-            this.authorsListBox.Name = "authorsListBox";
-            this.authorsListBox.Size = new System.Drawing.Size(216, 172);
-            this.authorsListBox.TabIndex = 9;
+
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(717, 475);
+            this.ClientSize = new System.Drawing.Size(720, 475);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SearchBox);
@@ -376,7 +406,7 @@
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(400, 450);
+            this.MinimumSize = new System.Drawing.Size(736, 513);
             this.Name = "Form1";
             this.Text = "Devorganizer";
             this.menuStrip1.ResumeLayout(false);
@@ -384,6 +414,10 @@
             this.tabControl1.ResumeLayout(false);
             this.addTab.ResumeLayout(false);
             this.addTab.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -391,10 +425,8 @@
             this.DatabaseTab.ResumeLayout(false);
             this.DatabaseTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,7 +454,7 @@
         private System.Windows.Forms.ListBox tagsListBox;
         private System.Windows.Forms.Button browseButton;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox pathTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton FolderOption;
         private System.Windows.Forms.RadioButton FileOption;
@@ -432,6 +464,9 @@
         private System.Windows.Forms.ListBox authorsListBox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.BindingSource devOrgDBDataSetBindingSource;
+        private DevOrgDBDataSet devOrgDBDataSet;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
 

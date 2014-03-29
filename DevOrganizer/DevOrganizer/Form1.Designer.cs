@@ -165,6 +165,7 @@
             this.authorsTextBox.Name = "authorsTextBox";
             this.authorsTextBox.Size = new System.Drawing.Size(135, 20);
             this.authorsTextBox.TabIndex = 10;
+            this.authorsTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.authorsTextBox_KeyDown);
             // 
             // authorsListBox
             // 
@@ -174,6 +175,7 @@
             this.authorsListBox.Name = "authorsListBox";
             this.authorsListBox.Size = new System.Drawing.Size(216, 172);
             this.authorsListBox.TabIndex = 9;
+            this.authorsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.authorsListBox_KeyDown);
             // 
             // groupBox3
             // 
@@ -221,6 +223,7 @@
             this.tagsTextBox.Name = "tagsTextBox";
             this.tagsTextBox.Size = new System.Drawing.Size(135, 20);
             this.tagsTextBox.TabIndex = 10;
+            this.tagsTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tagsTextBox_KeyDown);
             // 
             // tagsListBox
             // 
@@ -230,6 +233,7 @@
             this.tagsListBox.Name = "tagsListBox";
             this.tagsListBox.Size = new System.Drawing.Size(216, 172);
             this.tagsListBox.TabIndex = 9;
+            this.tagsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tagsListBox_KeyDown);
             // 
             // browseButton
             // 
@@ -366,6 +370,7 @@
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.Size = new System.Drawing.Size(191, 20);
             this.SearchBox.TabIndex = 2;
+            this.SearchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchBox_KeyDown);
             // 
             // label1
             // 

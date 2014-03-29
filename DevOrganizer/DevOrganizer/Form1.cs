@@ -58,20 +58,77 @@ namespace DevOrganizer
 
         private void addTagButton_Click(object sender, EventArgs e)
         {
-            if (tagsTextBox.Text != "")
+            bool sameTag = false;
+
+            foreach (object obj in tagsListBox.Items)
+            {
+                if (obj.ToString() == tagsTextBox.Text)
+                    sameTag = true;
+            }
+
+            if (tagsTextBox.Text != "" && !sameTag)
             {
                 tagsListBox.Items.Add(tagsTextBox.Text);
+                tagsTextBox.Clear();
             }
         }
 
         private void addAuthorButton_Click(object sender, EventArgs e)
         {
-            if (authorsTextBox.Text != "")
+            bool sameAuthor = false;
+
+            foreach (object obj in authorsListBox.Items)
+            {
+                if (obj.ToString() == authorsTextBox.Text)
+                    sameAuthor = true;
+            }
+
+            if (authorsTextBox.Text != "" && !sameAuthor)
             {
                 authorsListBox.Items.Add(authorsTextBox.Text);
+                authorsTextBox.Clear();
             }           
         }
 
+        private void SearchBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                onSearchButtonClick(sender, e);
+            }
+        }
+
+        private void tagsTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                addTagButton_Click(sender, e);
+            }
+        }
+
+        private void authorsTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                addAuthorButton_Click(sender, e);
+            }
+        }
+
+        private void tagsListBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                tagsListBox.Items.Remove(tagsListBox.SelectedItem);
+            }
+        }
+
+        private void authorsListBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                authorsListBox.Items.Remove(authorsListBox.SelectedItem);
+            }
+        }
 
 
 

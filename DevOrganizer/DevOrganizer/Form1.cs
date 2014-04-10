@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack;
 using Microsoft.WindowsAPICodePack.Shell;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace DevOrganizer
 {
@@ -128,6 +129,24 @@ namespace DevOrganizer
             {
                 authorsListBox.Items.Remove(authorsListBox.SelectedItem);
             }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'devOrgDBDataSet.FileTags' table. You can move, or remove it, as needed.
+            this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags);
+
+        }
+
+        private void loadButton_Click(object sender, EventArgs e)
+        {
+            this.devOrgDBDataSet.Clear();
+            this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags);
         }
 
 

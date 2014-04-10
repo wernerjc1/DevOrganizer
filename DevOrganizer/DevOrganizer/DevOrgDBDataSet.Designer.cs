@@ -856,8 +856,8 @@ namespace DevOrganizer.DevOrgDBDataSetTableAdapters {
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        sync, filepath, tags\r\nFROM          FileTags\r\nWHERE        (tags LI" +
-                "KE @tag1)";
+            this._commandCollection[2].CommandText = "SELECT        sync, filepath, tags\r\nFROM          FileTags\r\nWHERE        tags LIK" +
+                "E @tag1";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@tag1";

@@ -133,7 +133,7 @@ namespace DevOrganizer
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -147,6 +147,47 @@ namespace DevOrganizer
         {
             this.devOrgDBDataSet.Clear();
             this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags);
+        }
+
+        private void AddProjectButton_OnClick(object sender, EventArgs e)
+        {
+            string pathEntry = "";
+            pathEntry += pathTextBox.Text.ToString();
+            string tagEntry = "";
+            
+            if (tagsListBox.Items.Count > 0)
+            {
+                tagEntry = tagsListBox.Items[0].ToString();
+                if (tagsListBox.Items.Count > 1)
+                {
+                    for (int i = 0; i < tagsListBox.Items.Count; i++)
+                    {
+                        tagEntry += ",";
+                        tagEntry += tagsListBox.Items[i].ToString();
+                    }
+                }
+            }
+            string authorEntry = authorsListBox.Items.Cast<string>().ToString();
+            string descEntry = descriptionTextBox.ToString();
+
+            if (pathEntry == "")
+            {
+                MessageBox.Show("Please enter a valid filepath.");
+            }
+            else if (tagEntry == "")
+            {
+                MessageBox.Show("Please enter a valid tag.");
+            }
+            else
+            {
+                this.fileTagsTableAdapter.Insert(1, pathEntry, tagEntry);
+                MessageBox.Show("Project Added!");
+            }
+        }
+
+        private void deleteButton_onClick(object sender, EventArgs e)
+        {
+           // this.fileTagsTableAdapter.DeleteFilepath(fileTagsTableAdapter.selected());
         }
 
 

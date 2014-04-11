@@ -53,22 +53,22 @@
             this.FileOption = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.DatabaseTab = new System.Windows.Forms.TabPage();
+            this.loadButton = new System.Windows.Forms.Button();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.fileTagsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.syncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filepathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tagsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.devOrgDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.devOrgDBDataSet = new DevOrganizer.DevOrgDBDataSet();
+            this.fileTagsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.fileTagsTableAdapter = new DevOrganizer.DevOrgDBDataSetTableAdapters.FileTagsTableAdapter();
-            this.loadButton = new System.Windows.Forms.Button();
             this.fileTagsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.syncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.filepathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tagsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.addTab.SuspendLayout();
@@ -78,9 +78,9 @@
             this.groupBox1.SuspendLayout();
             this.DatabaseTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileTagsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileTagsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileTagsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -315,6 +315,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.AddProjectButton_OnClick);
             // 
             // DatabaseTab
             // 
@@ -330,6 +331,16 @@
             this.DatabaseTab.TabIndex = 1;
             this.DatabaseTab.Text = "Database View";
             this.DatabaseTab.UseVisualStyleBackColor = true;
+            // 
+            // loadButton
+            // 
+            this.loadButton.Location = new System.Drawing.Point(11, 36);
+            this.loadButton.Name = "loadButton";
+            this.loadButton.Size = new System.Drawing.Size(75, 23);
+            this.loadButton.TabIndex = 3;
+            this.loadButton.Text = "Load";
+            this.loadButton.UseVisualStyleBackColor = true;
+            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
             // 
             // propertyGrid1
             // 
@@ -352,7 +363,6 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -368,10 +378,29 @@
             this.dataGridView1.Size = new System.Drawing.Size(609, 217);
             this.dataGridView1.TabIndex = 0;
             // 
-            // fileTagsBindingSource
+            // syncDataGridViewTextBoxColumn
             // 
-            this.fileTagsBindingSource.DataMember = "FileTags";
-            this.fileTagsBindingSource.DataSource = this.devOrgDBDataSetBindingSource;
+            this.syncDataGridViewTextBoxColumn.DataPropertyName = "sync";
+            this.syncDataGridViewTextBoxColumn.HeaderText = "sync";
+            this.syncDataGridViewTextBoxColumn.Name = "syncDataGridViewTextBoxColumn";
+            this.syncDataGridViewTextBoxColumn.ReadOnly = true;
+            this.syncDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // filepathDataGridViewTextBoxColumn
+            // 
+            this.filepathDataGridViewTextBoxColumn.DataPropertyName = "filepath";
+            this.filepathDataGridViewTextBoxColumn.HeaderText = "filepath";
+            this.filepathDataGridViewTextBoxColumn.Name = "filepathDataGridViewTextBoxColumn";
+            this.filepathDataGridViewTextBoxColumn.ReadOnly = true;
+            this.filepathDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // tagsDataGridViewTextBoxColumn
+            // 
+            this.tagsDataGridViewTextBoxColumn.DataPropertyName = "tags";
+            this.tagsDataGridViewTextBoxColumn.HeaderText = "tags";
+            this.tagsDataGridViewTextBoxColumn.Name = "tagsDataGridViewTextBoxColumn";
+            this.tagsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tagsDataGridViewTextBoxColumn.Width = 200;
             // 
             // devOrgDBDataSetBindingSource
             // 
@@ -382,6 +411,11 @@
             // 
             this.devOrgDBDataSet.DataSetName = "DevOrgDBDataSet";
             this.devOrgDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fileTagsBindingSource
+            // 
+            this.fileTagsBindingSource.DataMember = "FileTags";
+            this.fileTagsBindingSource.DataSource = this.devOrgDBDataSetBindingSource;
             // 
             // SearchBox
             // 
@@ -419,41 +453,10 @@
             // 
             this.fileTagsTableAdapter.ClearBeforeFill = true;
             // 
-            // loadButton
-            // 
-            this.loadButton.Location = new System.Drawing.Point(11, 36);
-            this.loadButton.Name = "loadButton";
-            this.loadButton.Size = new System.Drawing.Size(75, 23);
-            this.loadButton.TabIndex = 3;
-            this.loadButton.Text = "Load";
-            this.loadButton.UseVisualStyleBackColor = true;
-            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
-            // 
             // fileTagsBindingSource1
             // 
             this.fileTagsBindingSource1.DataMember = "FileTags";
             this.fileTagsBindingSource1.DataSource = this.devOrgDBDataSetBindingSource;
-            // 
-            // syncDataGridViewTextBoxColumn
-            // 
-            this.syncDataGridViewTextBoxColumn.DataPropertyName = "sync";
-            this.syncDataGridViewTextBoxColumn.HeaderText = "sync";
-            this.syncDataGridViewTextBoxColumn.Name = "syncDataGridViewTextBoxColumn";
-            this.syncDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // filepathDataGridViewTextBoxColumn
-            // 
-            this.filepathDataGridViewTextBoxColumn.DataPropertyName = "filepath";
-            this.filepathDataGridViewTextBoxColumn.HeaderText = "filepath";
-            this.filepathDataGridViewTextBoxColumn.Name = "filepathDataGridViewTextBoxColumn";
-            this.filepathDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tagsDataGridViewTextBoxColumn
-            // 
-            this.tagsDataGridViewTextBoxColumn.DataPropertyName = "tags";
-            this.tagsDataGridViewTextBoxColumn.HeaderText = "tags";
-            this.tagsDataGridViewTextBoxColumn.Name = "tagsDataGridViewTextBoxColumn";
-            this.tagsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Form1
             // 
@@ -490,9 +493,9 @@
             this.DatabaseTab.ResumeLayout(false);
             this.DatabaseTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileTagsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileTagsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileTagsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

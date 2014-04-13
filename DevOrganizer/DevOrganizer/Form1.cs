@@ -167,8 +167,20 @@ namespace DevOrganizer
                     }
                 }
             }
-            string authorEntry = authorsListBox.Items.Cast<string>().ToString();
-            string descEntry = descriptionTextBox.ToString();
+            string authorEntry = "";
+            if (authorsListBox.Items.Count > 0)
+            {
+                authorEntry = authorsListBox.Items[0].ToString();
+                if (authorsListBox.Items.Count > 1)
+                {
+                    for (int i = 0; i < authorsListBox.Items.Count; i++)
+                    {
+                        authorEntry += ",";
+                        authorEntry += authorsListBox.Items[i].ToString();
+                    }
+                }
+            }
+            string descEntry = descriptionTextBox.Text.ToString();
 
             if (pathEntry == "")
             {
@@ -180,14 +192,54 @@ namespace DevOrganizer
             }
             else
             {
-                this.fileTagsTableAdapter.Insert(1, pathEntry, tagEntry);
+                this.fileTagsTableAdapter.InsertTuple("1", pathEntry, tagEntry, authorEntry, descEntry);
                 MessageBox.Show("Project Added!");
             }
         }
 
-        private void deleteButton_onClick(object sender, EventArgs e)
+        private void deleteButton_Click(object sender, EventArgs e)
         {
-           // this.fileTagsTableAdapter.DeleteFilepath(fileTagsTableAdapter.selected());
+            DataGridViewSelectedCellCollection sCells = dataGridView1.SelectedCells;
+            foreach (DataGridViewTextBoxCell file in sCells)
+            {
+                if (file.ColumnIndex == filepathDataGridViewTextBoxColumn.HeaderCell.ColumnIndex)
+                {
+                    string filestr = file.Value.ToString();
+                    fileTagsTableAdapter.DeleteFilepath(filestr);
+                }
+            }
+            this.devOrgDBDataSet.Clear();
+            this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags);
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (dataGridView1.CurrentCell.ColumnIndex != 1)
+            {
+                e.Handled = true;
+                dataGridView1.BeginEdit(true);
+            }
+        }
+
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            //read the new values.
+            string newFilePath = row.Cells[1].Value.ToString();
+            string newTags = row.Cells[2].Value.ToString();
+            string newAuthor = row.Cells[3].Value.ToString();
+            string newDescription = row.Cells[4].Value.ToString();
+
+            string oldFilePath = devOrgDBDataSet.FileTags.Rows[e.RowIndex].ItemArray[1].ToString();
+            fileTagsTableAdapter.UpdateTags(newTags, oldFilePath);
+            fileTagsTableAdapter.UpdateAuthor(newAuthor, oldFilePath);
+            fileTagsTableAdapter.UpdateDescription(newDescription, oldFilePath);
+            //Since filepath is the primary key, it cannot be changed this way.
+            //fileTagsTableAdapter.UpdateFilePath(newFilePath, oldFilePath);
+
+            this.devOrgDBDataSet.Clear();
+            this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags);
         }
 
 

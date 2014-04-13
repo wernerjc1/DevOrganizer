@@ -2,6 +2,9 @@
     
     
     public partial class DevOrgDBDataSet {
+        partial class FileTagsDataTable
+        {
+        }
     }
 }
 

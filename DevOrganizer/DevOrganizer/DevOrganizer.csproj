@@ -95,7 +95,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="DevOrgDBDataSet.xsc">
       <DependentUpon>DevOrgDBDataSet.xsd</DependentUpon>
     </None>

@@ -53,6 +53,7 @@
             this.FileOption = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.DatabaseTab = new System.Windows.Forms.TabPage();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,6 +61,8 @@
             this.syncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.filepathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tagsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.devOrgDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.devOrgDBDataSet = new DevOrganizer.DevOrgDBDataSet();
             this.fileTagsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -319,6 +322,7 @@
             // 
             // DatabaseTab
             // 
+            this.DatabaseTab.Controls.Add(this.deleteButton);
             this.DatabaseTab.Controls.Add(this.loadButton);
             this.DatabaseTab.Controls.Add(this.propertyGrid1);
             this.DatabaseTab.Controls.Add(this.label2);
@@ -331,6 +335,16 @@
             this.DatabaseTab.TabIndex = 1;
             this.DatabaseTab.Text = "Database View";
             this.DatabaseTab.UseVisualStyleBackColor = true;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(11, 111);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 4;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // loadButton
             // 
@@ -369,14 +383,16 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.syncDataGridViewTextBoxColumn,
             this.filepathDataGridViewTextBoxColumn,
-            this.tagsDataGridViewTextBoxColumn});
+            this.tagsDataGridViewTextBoxColumn,
+            this.author,
+            this.description});
             this.dataGridView1.DataMember = "FileTags";
             this.dataGridView1.DataSource = this.devOrgDBDataSetBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(92, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(609, 217);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
             // syncDataGridViewTextBoxColumn
             // 
@@ -384,6 +400,7 @@
             this.syncDataGridViewTextBoxColumn.HeaderText = "sync";
             this.syncDataGridViewTextBoxColumn.Name = "syncDataGridViewTextBoxColumn";
             this.syncDataGridViewTextBoxColumn.ReadOnly = true;
+            this.syncDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.syncDataGridViewTextBoxColumn.Width = 50;
             // 
             // filepathDataGridViewTextBoxColumn
@@ -391,7 +408,6 @@
             this.filepathDataGridViewTextBoxColumn.DataPropertyName = "filepath";
             this.filepathDataGridViewTextBoxColumn.HeaderText = "filepath";
             this.filepathDataGridViewTextBoxColumn.Name = "filepathDataGridViewTextBoxColumn";
-            this.filepathDataGridViewTextBoxColumn.ReadOnly = true;
             this.filepathDataGridViewTextBoxColumn.Width = 200;
             // 
             // tagsDataGridViewTextBoxColumn
@@ -399,8 +415,19 @@
             this.tagsDataGridViewTextBoxColumn.DataPropertyName = "tags";
             this.tagsDataGridViewTextBoxColumn.HeaderText = "tags";
             this.tagsDataGridViewTextBoxColumn.Name = "tagsDataGridViewTextBoxColumn";
-            this.tagsDataGridViewTextBoxColumn.ReadOnly = true;
             this.tagsDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // author
+            // 
+            this.author.DataPropertyName = "author";
+            this.author.HeaderText = "author";
+            this.author.Name = "author";
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "description";
+            this.description.Name = "description";
             // 
             // devOrgDBDataSetBindingSource
             // 
@@ -541,9 +568,12 @@
         private DevOrgDBDataSetTableAdapters.FileTagsTableAdapter fileTagsTableAdapter;
         private System.Windows.Forms.Button loadButton;
         private System.Windows.Forms.BindingSource fileTagsBindingSource1;
+        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn syncDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn filepathDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tagsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn author;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
     }
 }
 

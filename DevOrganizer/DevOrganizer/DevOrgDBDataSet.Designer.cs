@@ -285,6 +285,10 @@ namespace DevOrganizer {
             
             private global::System.Data.DataColumn columntags;
             
+            private global::System.Data.DataColumn columnauthor;
+            
+            private global::System.Data.DataColumn columndescription;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public FileTagsDataTable() {
@@ -344,6 +348,22 @@ namespace DevOrganizer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn authorColumn {
+                get {
+                    return this.columnauthor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn descriptionColumn {
+                get {
+                    return this.columndescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -379,12 +399,14 @@ namespace DevOrganizer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FileTagsRow AddFileTagsRow(long sync, string filepath, string tags) {
+            public FileTagsRow AddFileTagsRow(long sync, string filepath, string tags, string author, string description) {
                 FileTagsRow rowFileTagsRow = ((FileTagsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         sync,
                         filepath,
-                        tags};
+                        tags,
+                        author,
+                        description};
                 rowFileTagsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFileTagsRow);
                 return rowFileTagsRow;
@@ -417,6 +439,8 @@ namespace DevOrganizer {
                 this.columnsync = base.Columns["sync"];
                 this.columnfilepath = base.Columns["filepath"];
                 this.columntags = base.Columns["tags"];
+                this.columnauthor = base.Columns["author"];
+                this.columndescription = base.Columns["description"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -428,12 +452,18 @@ namespace DevOrganizer {
                 base.Columns.Add(this.columnfilepath);
                 this.columntags = new global::System.Data.DataColumn("tags", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntags);
+                this.columnauthor = new global::System.Data.DataColumn("author", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnauthor);
+                this.columndescription = new global::System.Data.DataColumn("description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescription);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("FileTagsKey1", new global::System.Data.DataColumn[] {
                                 this.columnfilepath}, true));
                 this.columnfilepath.AllowDBNull = false;
                 this.columnfilepath.Unique = true;
                 this.columnfilepath.MaxLength = 2147483647;
                 this.columntags.MaxLength = 2147483647;
+                this.columnauthor.MaxLength = 2147483647;
+                this.columndescription.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -619,6 +649,38 @@ namespace DevOrganizer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string author {
+                get {
+                    try {
+                        return ((string)(this[this.tableFileTags.authorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'author\' in table \'FileTags\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFileTags.authorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string description {
+                get {
+                    try {
+                        return ((string)(this[this.tableFileTags.descriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'description\' in table \'FileTags\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFileTags.descriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IssyncNull() {
                 return this.IsNull(this.tableFileTags.syncColumn);
             }
@@ -639,6 +701,30 @@ namespace DevOrganizer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SettagsNull() {
                 this[this.tableFileTags.tagsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsauthorNull() {
+                return this.IsNull(this.tableFileTags.authorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetauthorNull() {
+                this[this.tableFileTags.authorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdescriptionNull() {
+                return this.IsNull(this.tableFileTags.descriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdescriptionNull() {
+                this[this.tableFileTags.descriptionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -801,22 +887,17 @@ namespace DevOrganizer.DevOrgDBDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "FileTags";
-            tableMapping.ColumnMappings.Add("sync", "sync");
             tableMapping.ColumnMappings.Add("filepath", "filepath");
             tableMapping.ColumnMappings.Add("tags", "tags");
+            tableMapping.ColumnMappings.Add("author", "author");
+            tableMapping.ColumnMappings.Add("description", "description");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [FileTags] ([sync], [filepath], [tags]) VALUES (@sync, @filepath, @ta" +
-                "gs)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [FileTags] ([filepath], [tags], [author], [description]) VALUES (@fil" +
+                "epath, @tags, @author, @description)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             global::System.Data.SQLite.SQLiteParameter param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@sync";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SourceColumn = "sync";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@filepath";
             param.DbType = global::System.Data.DbType.String;
             param.SourceColumn = "filepath";
@@ -825,6 +906,16 @@ namespace DevOrganizer.DevOrgDBDataSetTableAdapters {
             param.ParameterName = "@tags";
             param.DbType = global::System.Data.DbType.String;
             param.SourceColumn = "tags";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@author";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "author";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@description";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "description";
             this._adapter.InsertCommand.Parameters.Add(param);
         }
         
@@ -838,10 +929,10 @@ namespace DevOrganizer.DevOrgDBDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SQLite.SQLiteCommand[8];
+            this._commandCollection = new global::System.Data.SQLite.SQLiteCommand[13];
             this._commandCollection[0] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT [sync], [filepath], [tags] FROM [FileTags]";
+            this._commandCollection[0].CommandText = "SELECT filepath, tags, author, description FROM FileTags";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -856,8 +947,7 @@ namespace DevOrganizer.DevOrgDBDataSetTableAdapters {
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        sync, filepath, tags\r\nFROM          FileTags\r\nWHERE        tags LIK" +
-                "E @tag1";
+            this._commandCollection[2].CommandText = "SELECT author, description, filepath, tags FROM FileTags WHERE (tags LIKE @tag1)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@tag1";
@@ -867,8 +957,8 @@ namespace DevOrganizer.DevOrgDBDataSetTableAdapters {
             this._commandCollection[2].Parameters.Add(param);
             this._commandCollection[3] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        sync, filepath, tags\r\nFROM          FileTags\r\nWHERE        (tags LI" +
-                "KE @tag1)\r\nAND             (tags LIKE @tag2)\r\nAND             (tags LIKE @tag3)";
+            this._commandCollection[3].CommandText = "SELECT author, description, filepath, tags FROM FileTags WHERE (tags LIKE @tag1) " +
+                "AND (tags LIKE @tag2) AND (tags LIKE @tag3)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@tag1";
@@ -890,8 +980,8 @@ namespace DevOrganizer.DevOrgDBDataSetTableAdapters {
             this._commandCollection[3].Parameters.Add(param);
             this._commandCollection[4] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        sync, filepath, tags\r\nFROM          FileTags\r\nWHERE        (tags LI" +
-                "KE @tag1)\r\nAND             (tags LIKE @tag2)";
+            this._commandCollection[4].CommandText = "SELECT author, description, filepath, tags FROM FileTags WHERE (tags LIKE @tag1) " +
+                "AND (tags LIKE @tag2)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@tag1";
@@ -907,7 +997,7 @@ namespace DevOrganizer.DevOrgDBDataSetTableAdapters {
             this._commandCollection[4].Parameters.Add(param);
             this._commandCollection[5] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT [filepath], [tags], [sync] FROM [FileTags]";
+            this._commandCollection[5].CommandText = "SELECT author, description, filepath, tags FROM FileTags";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[6].Connection = this.Connection;
@@ -927,22 +1017,125 @@ namespace DevOrganizer.DevOrgDBDataSetTableAdapters {
             this._commandCollection[6].Parameters.Add(param);
             this._commandCollection[7] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "UPDATE FileTags\r\nSET sync = @sync1\r\nWHERE filepaht = @pathString";
+            this._commandCollection[7].CommandText = "INSERT INTO [FileTags] ([sync], [filepath], [tags], [author], [description]) VALU" +
+                "ES (@sync, @filepath, @tags, @author, @description)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@sync1";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.DbType = global::System.Data.DbType.Int64;
-            param.Size = 8;
+            param.ParameterName = "@sync";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 2147483647;
             param.SourceColumn = "sync";
             this._commandCollection[7].Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@pathString";
-            param.DbType = global::System.Data.DbType.Object;
-            param.Size = 1024;
-            param.SourceColumn = "";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.ParameterName = "@filepath";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 2147483647;
+            param.SourceColumn = "filepath";
             this._commandCollection[7].Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@tags";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 2147483647;
+            param.SourceColumn = "tags";
+            this._commandCollection[7].Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@author";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 2147483647;
+            param.SourceColumn = "author";
+            this._commandCollection[7].Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@description";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 2147483647;
+            param.SourceColumn = "description";
+            this._commandCollection[7].Parameters.Add(param);
+            this._commandCollection[8] = new global::System.Data.SQLite.SQLiteCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "UPDATE FileTags\r\nSET author = @authorString\r\nWHERE filepath = @pathString";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@authorString";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 2147483647;
+            param.SourceColumn = "author";
+            this._commandCollection[8].Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@pathString";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 2147483647;
+            param.SourceColumn = "filepath";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[8].Parameters.Add(param);
+            this._commandCollection[9] = new global::System.Data.SQLite.SQLiteCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = "UPDATE FileTags\r\nSET description = @descriptionString\r\nWHERE filepath = @pathStri" +
+                "ng";
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@descriptionString";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 2147483647;
+            param.SourceColumn = "description";
+            this._commandCollection[9].Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@pathString";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 2147483647;
+            param.SourceColumn = "filepath";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[9].Parameters.Add(param);
+            this._commandCollection[10] = new global::System.Data.SQLite.SQLiteCommand();
+            this._commandCollection[10].Connection = this.Connection;
+            this._commandCollection[10].CommandText = "UPDATE FileTags\r\nSET filepath = @newPathString\r\nWHERE filepath = @oldPathString";
+            this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@newPathString";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 2147483647;
+            param.SourceColumn = "filepath";
+            this._commandCollection[10].Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@oldPathString";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 2147483647;
+            param.SourceColumn = "filepath";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[10].Parameters.Add(param);
+            this._commandCollection[11] = new global::System.Data.SQLite.SQLiteCommand();
+            this._commandCollection[11].Connection = this.Connection;
+            this._commandCollection[11].CommandText = "UPDATE FileTags\r\nSET sync = @sync\r\nWHERE filepath = @pathString";
+            this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@sync";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 2147483647;
+            param.SourceColumn = "sync";
+            this._commandCollection[11].Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@pathString";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 2147483647;
+            param.SourceColumn = "filepath";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[11].Parameters.Add(param);
+            this._commandCollection[12] = new global::System.Data.SQLite.SQLiteCommand();
+            this._commandCollection[12].Connection = this.Connection;
+            this._commandCollection[12].CommandText = "UPDATE FileTags\r\nSET tags = @tagString\r\nWHERE filepath = @pathString";
+            this._commandCollection[12].CommandType = global::System.Data.CommandType.Text;
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@tagString";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 2147483647;
+            param.SourceColumn = "tags";
+            this._commandCollection[12].Parameters.Add(param);
+            param = new global::System.Data.SQLite.SQLiteParameter();
+            param.ParameterName = "@pathString";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 2147483647;
+            param.SourceColumn = "filepath";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[12].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1170,24 +1363,30 @@ namespace DevOrganizer.DevOrgDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<long> sync, string filepath, string tags) {
-            if ((sync.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((long)(sync.Value));
-            }
-            else {
+        public virtual int Insert(string filepath, string tags, string author, string description) {
+            if ((filepath == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((filepath == null)) {
-                throw new global::System.ArgumentNullException("filepath");
-            }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(filepath));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(filepath));
             }
             if ((tags == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(tags));
+            }
+            if ((author == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(tags));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(author));
+            }
+            if ((description == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(description));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1272,20 +1471,213 @@ namespace DevOrganizer.DevOrgDBDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateSync(global::System.Nullable<long> sync1, object pathString) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertTuple(string sync, string filepath, string tags, string author, string description) {
             global::System.Data.SQLite.SQLiteCommand command = this.CommandCollection[7];
-            if ((sync1.HasValue == true)) {
-                command.Parameters[0].Value = ((long)(sync1.Value));
-            }
-            else {
+            if ((sync == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((pathString == null)) {
-                throw new global::System.ArgumentNullException("pathString");
+            else {
+                command.Parameters[0].Value = ((string)(sync));
+            }
+            if ((filepath == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[1].Value = ((object)(pathString));
+                command.Parameters[1].Value = ((string)(filepath));
+            }
+            if ((tags == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(tags));
+            }
+            if ((author == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(author));
+            }
+            if ((description == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(description));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateAuthor(string authorString, string pathString) {
+            global::System.Data.SQLite.SQLiteCommand command = this.CommandCollection[8];
+            if ((authorString == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(authorString));
+            }
+            if ((pathString == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(pathString));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateDescription(string descriptionString, string pathString) {
+            global::System.Data.SQLite.SQLiteCommand command = this.CommandCollection[9];
+            if ((descriptionString == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(descriptionString));
+            }
+            if ((pathString == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(pathString));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateFilePath(string newPathString, string oldPathString) {
+            global::System.Data.SQLite.SQLiteCommand command = this.CommandCollection[10];
+            if ((newPathString == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(newPathString));
+            }
+            if ((oldPathString == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(oldPathString));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateSync(string sync, string pathString) {
+            global::System.Data.SQLite.SQLiteCommand command = this.CommandCollection[11];
+            if ((sync == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(sync));
+            }
+            if ((pathString == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(pathString));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateTags(string tagString, string pathString) {
+            global::System.Data.SQLite.SQLiteCommand command = this.CommandCollection[12];
+            if ((tagString == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(tagString));
+            }
+            if ((pathString == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(pathString));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

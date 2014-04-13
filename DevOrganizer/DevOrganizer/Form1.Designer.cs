@@ -55,8 +55,6 @@
             this.DatabaseTab = new System.Windows.Forms.TabPage();
             this.deleteButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
-            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
-            this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.syncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.filepathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -324,8 +322,6 @@
             // 
             this.DatabaseTab.Controls.Add(this.deleteButton);
             this.DatabaseTab.Controls.Add(this.loadButton);
-            this.DatabaseTab.Controls.Add(this.propertyGrid1);
-            this.DatabaseTab.Controls.Add(this.label2);
             this.DatabaseTab.Controls.Add(this.dataGridView1);
             this.DatabaseTab.Location = new System.Drawing.Point(4, 23);
             this.DatabaseTab.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
@@ -356,24 +352,6 @@
             this.loadButton.UseVisualStyleBackColor = true;
             this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
             // 
-            // propertyGrid1
-            // 
-            this.propertyGrid1.HelpVisible = false;
-            this.propertyGrid1.Location = new System.Drawing.Point(8, 244);
-            this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(693, 131);
-            this.propertyGrid1.TabIndex = 2;
-            this.propertyGrid1.ToolbarVisible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 227);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 14);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Properties";
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -390,7 +368,7 @@
             this.dataGridView1.DataSource = this.devOrgDBDataSetBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(92, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(609, 217);
+            this.dataGridView1.Size = new System.Drawing.Size(609, 375);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
@@ -518,7 +496,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.DatabaseTab.ResumeLayout(false);
-            this.DatabaseTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSet)).EndInit();
@@ -542,8 +519,6 @@
         private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PropertyGrid propertyGrid1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button addTagButton;

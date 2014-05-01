@@ -242,6 +242,30 @@ namespace DevOrganizer
             this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags);
         }
 
+        private void onFilepathDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedCells.Count == 1)
+            {
+                if (dataGridView1.CurrentCell.ColumnIndex == 1)
+                {
+
+                    string s = dataGridView1.CurrentCell.Value.ToString();
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                    {
+                        FileName = s,
+                        UseShellExecute = true,
+                        Verb = "open"
+                    });
+                }
+            }
+            else MessageBox.Show("Incorrect Number of cells");
+        }
+
+        private void copyClipboard_Click(object sender, EventArgs e)
+        {
+         //   if(dataGridView1.currentCel
+        }
+
 
 
     }

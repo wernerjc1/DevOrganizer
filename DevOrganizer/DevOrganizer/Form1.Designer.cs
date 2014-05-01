@@ -70,6 +70,7 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.fileTagsTableAdapter = new DevOrganizer.DevOrgDBDataSetTableAdapters.FileTagsTableAdapter();
             this.fileTagsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.addTab.SuspendLayout();
@@ -320,6 +321,7 @@
             // 
             // DatabaseTab
             // 
+            this.DatabaseTab.Controls.Add(this.button3);
             this.DatabaseTab.Controls.Add(this.deleteButton);
             this.DatabaseTab.Controls.Add(this.loadButton);
             this.DatabaseTab.Controls.Add(this.dataGridView1);
@@ -370,6 +372,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(609, 375);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.onFilepathDoubleClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
             // syncDataGridViewTextBoxColumn
@@ -463,6 +466,16 @@
             this.fileTagsBindingSource1.DataMember = "FileTags";
             this.fileTagsBindingSource1.DataSource = this.devOrgDBDataSetBindingSource;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(11, 169);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 41);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Copy to Clipboard";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.copyClipboard_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -549,6 +562,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tagsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn author;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.Button button3;
     }
 }
 

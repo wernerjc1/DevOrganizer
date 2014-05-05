@@ -19,6 +19,7 @@ namespace DevOrganizer
         {
             InitializeComponent();
         }
+        private Icon ico;
 
         private void onSearchButtonClick(object sender, EventArgs e)
         {
@@ -140,7 +141,7 @@ namespace DevOrganizer
         {
             // TODO: This line of code loads data into the 'devOrgDBDataSet.FileTags' table. You can move, or remove it, as needed.
             this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags);
-
+            ico = notifyIcon1.Icon;
         }
 
         private void loadButton_Click(object sender, EventArgs e)
@@ -266,6 +267,45 @@ namespace DevOrganizer
          //   if(dataGridView1.currentCel
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void gAYToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hideToSystemTrayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+        }
+
+        private void showFormToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void hideToContextMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
 
     }

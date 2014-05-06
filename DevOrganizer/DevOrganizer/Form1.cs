@@ -21,6 +21,7 @@ namespace DevOrganizer
             GreyedText = "tag1, tag2, ...";
             SearchBox.Text = GreyedText;
             SearchBox.ForeColor = Color.Gray;
+            copiedLabel.ForeColor = copiedLabel.BackColor;
         }
         private Icon ico;
         private string GreyedText;
@@ -179,7 +180,6 @@ namespace DevOrganizer
         {
             this.devOrgDBDataSet.Clear();
             this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags);
-            this.fileTagsTableAdapter.FillTable(this.devOrgDBDataSet.FileTags);
             this.updateButton_Click(sender, e);
         }
 
@@ -260,10 +260,10 @@ namespace DevOrganizer
         {
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
             //read the new values.
-            string newFilePath = row.Cells[1].Value.ToString();
-            string newTags = row.Cells[2].Value.ToString();
-            string newAuthor = row.Cells[3].Value.ToString();
-            string newDescription = row.Cells[4].Value.ToString();
+           // string newFilePath = row.Cells[0].Value.ToString();
+            string newTags = row.Cells[1].Value.ToString();
+            string newAuthor = row.Cells[2].Value.ToString();
+            string newDescription = row.Cells[3].Value.ToString();
 
             string oldFilePath = devOrgDBDataSet.FileTags.Rows[e.RowIndex].ItemArray[1].ToString();
             fileTagsTableAdapter.UpdateTags(newTags, oldFilePath);
@@ -280,7 +280,7 @@ namespace DevOrganizer
         {
             if (dataGridView1.SelectedCells.Count == 1)
             {
-                if (dataGridView1.CurrentCell.ColumnIndex == 1)
+                if (dataGridView1.CurrentCell.ColumnIndex == 0)
                 {
 
                     string s = dataGridView1.CurrentCell.Value.ToString();
@@ -297,7 +297,16 @@ namespace DevOrganizer
 
         private void copyClipboard_Click(object sender, EventArgs e)
         {
-         //   if(dataGridView1.currentCel
+            if (dataGridView1.SelectedCells.Count == 1)
+            {
+                string selection = dataGridView1.CurrentCell.Value.ToString();
+                Clipboard.SetText(selection);
+                copiedLabel.Text = "Copied";
+                copiedLabel.ForeColor = Color.Black;
+                timer1.Start();
+
+    
+            }
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -368,6 +377,30 @@ namespace DevOrganizer
                 }
                 i++;
             }
+        }
+
+        private void SearchBox_onLeave(object sender, EventArgs e)
+        {
+            if (SearchBox.Text == "")
+            {
+                SearchBox.Text = GreyedText;
+                SearchBox.ForeColor = Color.Gray;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            int fadingSpeed = 16;
+
+            if (copiedLabel.ForeColor.R >= copiedLabel.BackColor.R)
+            {
+                timer1.Stop();
+                copiedLabel.ForeColor = copiedLabel.BackColor;
+                return;
+            }
+            copiedLabel.ForeColor = Color.FromArgb(copiedLabel.ForeColor.R + fadingSpeed-1, copiedLabel.ForeColor.G + fadingSpeed-1, copiedLabel.ForeColor.B + fadingSpeed-1);
+
+ 
         }
 
 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gAYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +57,7 @@
             this.FileOption = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.DatabaseTab = new System.Windows.Forms.TabPage();
+            this.updateButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
@@ -77,7 +79,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showFormToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateButton = new System.Windows.Forms.Button();
+            this.copiedLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.addTab.SuspendLayout();
@@ -102,7 +105,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(720, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(956, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -153,7 +156,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(720, 410);
+            this.tabControl1.Size = new System.Drawing.Size(956, 410);
             this.tabControl1.TabIndex = 1;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -171,7 +174,7 @@
             this.addTab.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.addTab.Name = "addTab";
             this.addTab.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.addTab.Size = new System.Drawing.Size(712, 383);
+            this.addTab.Size = new System.Drawing.Size(948, 383);
             this.addTab.TabIndex = 0;
             this.addTab.Text = "Add Project";
             this.addTab.UseVisualStyleBackColor = true;
@@ -348,6 +351,7 @@
             // 
             // DatabaseTab
             // 
+            this.DatabaseTab.Controls.Add(this.copiedLabel);
             this.DatabaseTab.Controls.Add(this.updateButton);
             this.DatabaseTab.Controls.Add(this.button3);
             this.DatabaseTab.Controls.Add(this.deleteButton);
@@ -357,14 +361,24 @@
             this.DatabaseTab.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.DatabaseTab.Name = "DatabaseTab";
             this.DatabaseTab.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.DatabaseTab.Size = new System.Drawing.Size(712, 383);
+            this.DatabaseTab.Size = new System.Drawing.Size(948, 383);
             this.DatabaseTab.TabIndex = 1;
             this.DatabaseTab.Text = "Database View";
             this.DatabaseTab.UseVisualStyleBackColor = true;
             // 
+            // updateButton
+            // 
+            this.updateButton.Location = new System.Drawing.Point(11, 53);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(75, 58);
+            this.updateButton.TabIndex = 6;
+            this.updateButton.Text = "Check Data Validity";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(11, 174);
+            this.button3.Location = new System.Drawing.Point(11, 146);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 41);
             this.button3.TabIndex = 5;
@@ -374,7 +388,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(11, 127);
+            this.deleteButton.Location = new System.Drawing.Point(11, 117);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 4;
@@ -384,11 +398,11 @@
             // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(11, 36);
+            this.loadButton.Location = new System.Drawing.Point(11, 7);
             this.loadButton.Name = "loadButton";
-            this.loadButton.Size = new System.Drawing.Size(75, 23);
+            this.loadButton.Size = new System.Drawing.Size(75, 40);
             this.loadButton.TabIndex = 3;
-            this.loadButton.Text = "Load";
+            this.loadButton.Text = "Reload View";
             this.loadButton.UseVisualStyleBackColor = true;
             this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
             // 
@@ -407,7 +421,7 @@
             this.dataGridView1.DataSource = this.devOrgDBDataSetBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(92, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(609, 375);
+            this.dataGridView1.Size = new System.Drawing.Size(848, 375);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.onFilepathDoubleClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
@@ -415,6 +429,9 @@
             // filepathDataGridViewTextBoxColumn
             // 
             this.filepathDataGridViewTextBoxColumn.DataPropertyName = "filepath";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.filepathDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.filepathDataGridViewTextBoxColumn.HeaderText = "filepath";
             this.filepathDataGridViewTextBoxColumn.Name = "filepathDataGridViewTextBoxColumn";
             this.filepathDataGridViewTextBoxColumn.Width = 200;
@@ -437,6 +454,7 @@
             this.description.DataPropertyName = "description";
             this.description.HeaderText = "description";
             this.description.Name = "description";
+            this.description.Width = 300;
             // 
             // devOrgDBDataSetBindingSource
             // 
@@ -457,19 +475,20 @@
             // 
             this.SearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchBox.Location = new System.Drawing.Point(460, 46);
+            this.SearchBox.Location = new System.Drawing.Point(603, 46);
             this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(191, 20);
+            this.SearchBox.Size = new System.Drawing.Size(284, 20);
             this.SearchBox.TabIndex = 2;
             this.SearchBox.Enter += new System.EventHandler(this.SearchBox_onEnter);
             this.SearchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchBox_KeyDown);
+            this.SearchBox.Leave += new System.EventHandler(this.SearchBox_onLeave);
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(457, 29);
+            this.label1.Location = new System.Drawing.Point(600, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 14);
             this.label1.TabIndex = 3;
@@ -478,7 +497,7 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(657, 43);
+            this.button2.Location = new System.Drawing.Point(893, 43);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(51, 23);
             this.button2.TabIndex = 4;
@@ -525,22 +544,25 @@
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
-            // updateButton
+            // copiedLabel
             // 
-            this.updateButton.Location = new System.Drawing.Point(11, 82);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(75, 23);
-            this.updateButton.TabIndex = 6;
-            this.updateButton.Text = "Update";
-            this.updateButton.UseVisualStyleBackColor = true;
-            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            this.copiedLabel.AutoSize = true;
+            this.copiedLabel.Location = new System.Drawing.Point(23, 190);
+            this.copiedLabel.Name = "copiedLabel";
+            this.copiedLabel.Size = new System.Drawing.Size(46, 14);
+            this.copiedLabel.TabIndex = 7;
+            this.copiedLabel.Text = "Copied";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(720, 475);
+            this.ClientSize = new System.Drawing.Size(956, 475);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SearchBox);
@@ -569,6 +591,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.DatabaseTab.ResumeLayout(false);
+            this.DatabaseTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSet)).EndInit();
@@ -625,11 +648,13 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem showFormToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
+        private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn filepathDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tagsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn author;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
-        private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.Label copiedLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

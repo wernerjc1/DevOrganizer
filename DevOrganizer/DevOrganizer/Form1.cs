@@ -299,6 +299,11 @@ namespace DevOrganizer
                 {
 
                     string s = dataGridView1.CurrentCell.Value.ToString();
+                    if (!System.IO.Directory.Exists(s))
+                    {
+                        MessageBox.Show("Not valid path");
+                        return;
+                    }
                     System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
                     {
                         FileName = s,

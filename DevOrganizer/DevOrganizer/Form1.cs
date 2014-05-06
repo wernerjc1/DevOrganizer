@@ -416,9 +416,169 @@ namespace DevOrganizer
             }
             copiedLabel.ForeColor = Color.FromArgb(copiedLabel.ForeColor.R + fadingSpeed-1, copiedLabel.ForeColor.G + fadingSpeed-1, copiedLabel.ForeColor.B + fadingSpeed-1);
 
- 
+
         }
 
+        private void timerOnMenuItem_Click(object sender, EventArgs e)
+        {
+            this.timerOnMenuItem.CheckState = CheckState.Checked;
+            this.timerOffMenuItem.CheckState = CheckState.Unchecked;
+            this.updateTimer.Enabled = true;
+        }
 
+        private void timerOffMenuItem_Click(object sender, EventArgs e)
+        {
+            this.timerOnMenuItem.CheckState = CheckState.Unchecked;
+            this.timerOffMenuItem.CheckState = CheckState.Checked;
+            this.updateTimer.Enabled = false;
+        }
+
+        // This doesn't actually work...
+        private void timerInterval_Click(object sender, EventArgs e, String interval)
+        {
+            //for (int i = 0; i < this.timerIntervalMenuItem.DropDownItems.Count; i++ )
+            //{
+            //    if (this.timerIntervalMenuItem.DropDownItems[i].Text != interval)
+            //    {
+            //        int j = this.timerIntervalMenuItem.DropDownItems.Count;//this.timerIntervalMenuItem.DropDownItems[i].CheckState = 
+            //        j++;
+            //    }
+            //}
+        }
+
+        private void minutesMenuItem_5_Click(object sender, EventArgs e)
+        {
+            minutesMenuItem_5.CheckState = CheckState.Checked;
+            minutesMenuItem_10.CheckState = CheckState.Unchecked;
+            minutesMenuItem_15.CheckState = CheckState.Unchecked;
+            minutesMenuItem_30.CheckState = CheckState.Unchecked;
+            hourMenuItem_1.CheckState = CheckState.Unchecked;
+            hoursMenuItem_5.CheckState = CheckState.Unchecked;
+            hoursMenuItem_10.CheckState = CheckState.Unchecked;
+            hoursMenuItem_15.CheckState = CheckState.Unchecked;
+            hoursMenuItem_24.CheckState = CheckState.Unchecked;
+
+            updateTimer.Interval = 300000;
+        }
+
+        private void minutesMenuItem_10_Click(object sender, EventArgs e)
+        {
+            minutesMenuItem_5.CheckState = CheckState.Unchecked;
+            minutesMenuItem_10.CheckState = CheckState.Checked;
+            minutesMenuItem_15.CheckState = CheckState.Unchecked;
+            minutesMenuItem_30.CheckState = CheckState.Unchecked;
+            hourMenuItem_1.CheckState = CheckState.Unchecked;
+            hoursMenuItem_5.CheckState = CheckState.Unchecked;
+            hoursMenuItem_10.CheckState = CheckState.Unchecked;
+            hoursMenuItem_15.CheckState = CheckState.Unchecked;
+            hoursMenuItem_24.CheckState = CheckState.Unchecked;
+
+            updateTimer.Interval = 600000;
+        }
+
+        private void minutesMenuItem_15_Click(object sender, EventArgs e)
+        {
+            minutesMenuItem_5.CheckState = CheckState.Unchecked;
+            minutesMenuItem_10.CheckState = CheckState.Unchecked;
+            minutesMenuItem_15.CheckState = CheckState.Checked;
+            minutesMenuItem_30.CheckState = CheckState.Unchecked;
+            hourMenuItem_1.CheckState = CheckState.Unchecked;
+            hoursMenuItem_5.CheckState = CheckState.Unchecked;
+            hoursMenuItem_10.CheckState = CheckState.Unchecked;
+            hoursMenuItem_15.CheckState = CheckState.Unchecked;
+            hoursMenuItem_24.CheckState = CheckState.Unchecked;
+
+            updateTimer.Interval = 900000;
+        }
+
+        private void minutesMenuItem_30_Click(object sender, EventArgs e)
+        {
+            minutesMenuItem_5.CheckState = CheckState.Unchecked;
+            minutesMenuItem_10.CheckState = CheckState.Unchecked;
+            minutesMenuItem_15.CheckState = CheckState.Unchecked;
+            minutesMenuItem_30.CheckState = CheckState.Checked;
+            hourMenuItem_1.CheckState = CheckState.Unchecked;
+            hoursMenuItem_5.CheckState = CheckState.Unchecked;
+            hoursMenuItem_10.CheckState = CheckState.Unchecked;
+            hoursMenuItem_15.CheckState = CheckState.Unchecked;
+            hoursMenuItem_24.CheckState = CheckState.Unchecked;
+
+            updateTimer.Interval = 1800000;
+        }
+
+        private void hourMenuItem_1_Click(object sender, EventArgs e)
+        {
+            minutesMenuItem_5.CheckState = CheckState.Unchecked;
+            minutesMenuItem_10.CheckState = CheckState.Unchecked;
+            minutesMenuItem_15.CheckState = CheckState.Unchecked;
+            minutesMenuItem_30.CheckState = CheckState.Unchecked;
+            hourMenuItem_1.CheckState = CheckState.Checked;
+            hoursMenuItem_5.CheckState = CheckState.Unchecked;
+            hoursMenuItem_10.CheckState = CheckState.Unchecked;
+            hoursMenuItem_15.CheckState = CheckState.Unchecked;
+            hoursMenuItem_24.CheckState = CheckState.Unchecked;
+
+            updateTimer.Interval = 3600000;
+        }
+
+        private void hoursMenuItem_5_Click(object sender, EventArgs e)
+        {
+            minutesMenuItem_5.CheckState = CheckState.Unchecked;
+            minutesMenuItem_10.CheckState = CheckState.Unchecked;
+            minutesMenuItem_15.CheckState = CheckState.Unchecked;
+            minutesMenuItem_30.CheckState = CheckState.Unchecked;
+            hourMenuItem_1.CheckState = CheckState.Unchecked;
+            hoursMenuItem_5.CheckState = CheckState.Checked;
+            hoursMenuItem_10.CheckState = CheckState.Unchecked;
+            hoursMenuItem_15.CheckState = CheckState.Unchecked;
+            hoursMenuItem_24.CheckState = CheckState.Unchecked;
+
+            updateTimer.Interval = 18000000;
+        }
+
+        private void hoursMenuItem_10_Click(object sender, EventArgs e)
+        {
+            minutesMenuItem_5.CheckState = CheckState.Unchecked;
+            minutesMenuItem_10.CheckState = CheckState.Unchecked;
+            minutesMenuItem_15.CheckState = CheckState.Unchecked;
+            minutesMenuItem_30.CheckState = CheckState.Unchecked;
+            hourMenuItem_1.CheckState = CheckState.Unchecked;
+            hoursMenuItem_5.CheckState = CheckState.Unchecked;
+            hoursMenuItem_10.CheckState = CheckState.Checked;
+            hoursMenuItem_15.CheckState = CheckState.Unchecked;
+            hoursMenuItem_24.CheckState = CheckState.Unchecked;
+
+            updateTimer.Interval = 36000000;
+        }
+
+        private void hoursMenuItem_15_Click(object sender, EventArgs e)
+        {
+            minutesMenuItem_5.CheckState = CheckState.Unchecked;
+            minutesMenuItem_10.CheckState = CheckState.Unchecked;
+            minutesMenuItem_15.CheckState = CheckState.Unchecked;
+            minutesMenuItem_30.CheckState = CheckState.Unchecked;
+            hourMenuItem_1.CheckState = CheckState.Unchecked;
+            hoursMenuItem_5.CheckState = CheckState.Unchecked;
+            hoursMenuItem_10.CheckState = CheckState.Unchecked;
+            hoursMenuItem_15.CheckState = CheckState.Checked;
+            hoursMenuItem_24.CheckState = CheckState.Unchecked;
+
+            updateTimer.Interval = 54000000;
+        }
+
+        private void hoursMenuItem_24_Click(object sender, EventArgs e)
+        {
+            minutesMenuItem_5.CheckState = CheckState.Unchecked;
+            minutesMenuItem_10.CheckState = CheckState.Unchecked;
+            minutesMenuItem_15.CheckState = CheckState.Unchecked;
+            minutesMenuItem_30.CheckState = CheckState.Unchecked;
+            hourMenuItem_1.CheckState = CheckState.Unchecked;
+            hoursMenuItem_5.CheckState = CheckState.Unchecked;
+            hoursMenuItem_10.CheckState = CheckState.Unchecked;
+            hoursMenuItem_15.CheckState = CheckState.Unchecked;
+            hoursMenuItem_24.CheckState = CheckState.Checked;
+
+            updateTimer.Interval = 86400000;
+        }
     }
 }

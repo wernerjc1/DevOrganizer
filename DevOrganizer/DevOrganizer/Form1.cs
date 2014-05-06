@@ -37,7 +37,7 @@ namespace DevOrganizer
             {
                 this.tabControl1.SelectedTab = DatabaseTab;
             }
-            this.fileTagsTableAdapter.FillByFilepathsWithTag(this.devOrgDBDataSet.FileTags, SearchBox.Text);
+            //this.fileTagsTableAdapter.FillByFilepathsWithTag(this.devOrgDBDataSet.FileTags, SearchBox.Text);
             char[] delimiterChars = {','};
 
             string[] tags = SearchBox.Text.Split(delimiterChars);
@@ -278,8 +278,9 @@ namespace DevOrganizer
             string newTags = row.Cells[1].Value.ToString();
             string newAuthor = row.Cells[2].Value.ToString();
             string newDescription = row.Cells[3].Value.ToString();
+            string oldFilePath = row.Cells[0].Value.ToString();
 
-            string oldFilePath = devOrgDBDataSet.FileTags.Rows[e.RowIndex].ItemArray[1].ToString();
+            //string oldFilePath = devOrgDBDataSet.FileTags.Rows[e.RowIndex].ItemArray[1].ToString();
             fileTagsTableAdapter.UpdateTags(newTags, oldFilePath);
             fileTagsTableAdapter.UpdateAuthor(newAuthor, oldFilePath);
             fileTagsTableAdapter.UpdateDescription(newDescription, oldFilePath);

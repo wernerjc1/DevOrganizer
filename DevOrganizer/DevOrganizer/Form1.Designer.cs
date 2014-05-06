@@ -62,14 +62,11 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.devOrgDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.devOrgDBDataSet = new DevOrganizer.DevOrgDBDataSet();
             this.fileTagsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.fileTagsTableAdapter = new DevOrganizer.DevOrgDBDataSetTableAdapters.FileTagsTableAdapter();
             this.fileTagsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -77,6 +74,9 @@
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.copiedLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.devOrgDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.devOrgDBDataSet = new DevOrganizer.DevOrgDBDataSet();
+            this.fileTagsTableAdapter = new DevOrganizer.DevOrgDBDataSetTableAdapters.FileTagsTableAdapter();
             this.filepathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tagsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,11 +90,11 @@
             this.groupBox1.SuspendLayout();
             this.DatabaseTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileTagsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileTagsBindingSource1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -426,16 +426,6 @@
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.onFilepathDoubleClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
-            // devOrgDBDataSetBindingSource
-            // 
-            this.devOrgDBDataSetBindingSource.DataSource = this.devOrgDBDataSet;
-            this.devOrgDBDataSetBindingSource.Position = 0;
-            // 
-            // devOrgDBDataSet
-            // 
-            this.devOrgDBDataSet.DataSetName = "DevOrgDBDataSet";
-            this.devOrgDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // fileTagsBindingSource
             // 
             this.fileTagsBindingSource.DataMember = "FileTags";
@@ -474,10 +464,6 @@
             this.button2.Text = "GO";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.onSearchButtonClick);
-            // 
-            // fileTagsTableAdapter
-            // 
-            this.fileTagsTableAdapter.ClearBeforeFill = true;
             // 
             // fileTagsBindingSource1
             // 
@@ -526,6 +512,20 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // devOrgDBDataSetBindingSource
+            // 
+            this.devOrgDBDataSetBindingSource.DataSource = this.devOrgDBDataSet;
+            this.devOrgDBDataSetBindingSource.Position = 0;
+            // 
+            // devOrgDBDataSet
+            // 
+            this.devOrgDBDataSet.DataSetName = "DevOrgDBDataSet";
+            this.devOrgDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fileTagsTableAdapter
+            // 
+            this.fileTagsTableAdapter.ClearBeforeFill = true;
             // 
             // filepathDataGridViewTextBoxColumn
             // 
@@ -594,11 +594,11 @@
             this.DatabaseTab.ResumeLayout(false);
             this.DatabaseTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileTagsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileTagsBindingSource1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

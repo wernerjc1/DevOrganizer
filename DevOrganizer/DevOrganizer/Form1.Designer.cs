@@ -29,12 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gAYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideToSystemTrayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerOnOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerOnMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerOffMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerIntervalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.minutesMenuItem_5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.minutesMenuItem_10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.minutesMenuItem_15 = new System.Windows.Forms.ToolStripMenuItem();
+            this.minutesMenuItem_30 = new System.Windows.Forms.ToolStripMenuItem();
+            this.hourMenuItem_1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.hoursMenuItem_5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.hoursMenuItem_10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.hoursMenuItem_15 = new System.Windows.Forms.ToolStripMenuItem();
+            this.hoursMenuItem_24 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -63,14 +77,12 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-
             this.filepathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tagsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.devOrgDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.devOrgDBDataSet = new DevOrganizer.DevOrgDBDataSet();
-
             this.fileTagsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -82,23 +94,12 @@
             this.showFormToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-
             this.fileTagsTableAdapter = new DevOrganizer.DevOrgDBDataSetTableAdapters.FileTagsTableAdapter();
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timerOnOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timerOnMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timerOffMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timerIntervalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.minutesMenuItem_5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.minutesMenuItem_10 = new System.Windows.Forms.ToolStripMenuItem();
-            this.minutesMenuItem_15 = new System.Windows.Forms.ToolStripMenuItem();
-            this.minutesMenuItem_30 = new System.Windows.Forms.ToolStripMenuItem();
-            this.hourMenuItem_1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.hoursMenuItem_5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.hoursMenuItem_10 = new System.Windows.Forms.ToolStripMenuItem();
-            this.hoursMenuItem_15 = new System.Windows.Forms.ToolStripMenuItem();
-            this.hoursMenuItem_24 = new System.Windows.Forms.ToolStripMenuItem();
+            this.newTagsContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.authorsContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.addTab.SuspendLayout();
@@ -108,11 +109,13 @@
             this.groupBox1.SuspendLayout();
             this.DatabaseTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileTagsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileTagsBindingSource1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSet)).BeginInit();
+            this.newTagsContextMenu.SuspendLayout();
+            this.authorsContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -152,6 +155,121 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.timerOnOffToolStripMenuItem,
+            this.timerIntervalToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // timerOnOffToolStripMenuItem
+            // 
+            this.timerOnOffToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.timerOnMenuItem,
+            this.timerOffMenuItem});
+            this.timerOnOffToolStripMenuItem.Name = "timerOnOffToolStripMenuItem";
+            this.timerOnOffToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.timerOnOffToolStripMenuItem.Text = "Update Timer On/Off";
+            // 
+            // timerOnMenuItem
+            // 
+            this.timerOnMenuItem.Checked = true;
+            this.timerOnMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.timerOnMenuItem.Name = "timerOnMenuItem";
+            this.timerOnMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.timerOnMenuItem.Text = "Timer On";
+            this.timerOnMenuItem.Click += new System.EventHandler(this.timerOnMenuItem_Click);
+            // 
+            // timerOffMenuItem
+            // 
+            this.timerOffMenuItem.Name = "timerOffMenuItem";
+            this.timerOffMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.timerOffMenuItem.Text = "Timer Off";
+            this.timerOffMenuItem.Click += new System.EventHandler(this.timerOffMenuItem_Click);
+            // 
+            // timerIntervalToolStripMenuItem
+            // 
+            this.timerIntervalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.minutesMenuItem_5,
+            this.minutesMenuItem_10,
+            this.minutesMenuItem_15,
+            this.minutesMenuItem_30,
+            this.hourMenuItem_1,
+            this.hoursMenuItem_5,
+            this.hoursMenuItem_10,
+            this.hoursMenuItem_15,
+            this.hoursMenuItem_24});
+            this.timerIntervalToolStripMenuItem.Name = "timerIntervalToolStripMenuItem";
+            this.timerIntervalToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.timerIntervalToolStripMenuItem.Text = "Update Timer Interval";
+            // 
+            // minutesMenuItem_5
+            // 
+            this.minutesMenuItem_5.Checked = true;
+            this.minutesMenuItem_5.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.minutesMenuItem_5.Name = "minutesMenuItem_5";
+            this.minutesMenuItem_5.Size = new System.Drawing.Size(152, 22);
+            this.minutesMenuItem_5.Text = "5 minutes";
+            this.minutesMenuItem_5.Click += new System.EventHandler(this.minutesMenuItem_5_Click);
+            // 
+            // minutesMenuItem_10
+            // 
+            this.minutesMenuItem_10.Name = "minutesMenuItem_10";
+            this.minutesMenuItem_10.Size = new System.Drawing.Size(152, 22);
+            this.minutesMenuItem_10.Text = "10 minutes";
+            this.minutesMenuItem_10.Click += new System.EventHandler(this.minutesMenuItem_10_Click);
+            // 
+            // minutesMenuItem_15
+            // 
+            this.minutesMenuItem_15.Name = "minutesMenuItem_15";
+            this.minutesMenuItem_15.Size = new System.Drawing.Size(152, 22);
+            this.minutesMenuItem_15.Text = "15 minutes";
+            this.minutesMenuItem_15.Click += new System.EventHandler(this.minutesMenuItem_15_Click);
+            // 
+            // minutesMenuItem_30
+            // 
+            this.minutesMenuItem_30.Name = "minutesMenuItem_30";
+            this.minutesMenuItem_30.Size = new System.Drawing.Size(152, 22);
+            this.minutesMenuItem_30.Text = "30 minutes";
+            this.minutesMenuItem_30.Click += new System.EventHandler(this.minutesMenuItem_30_Click);
+            // 
+            // hourMenuItem_1
+            // 
+            this.hourMenuItem_1.Name = "hourMenuItem_1";
+            this.hourMenuItem_1.Size = new System.Drawing.Size(152, 22);
+            this.hourMenuItem_1.Text = "1 hour";
+            this.hourMenuItem_1.Click += new System.EventHandler(this.hourMenuItem_1_Click);
+            // 
+            // hoursMenuItem_5
+            // 
+            this.hoursMenuItem_5.Name = "hoursMenuItem_5";
+            this.hoursMenuItem_5.Size = new System.Drawing.Size(152, 22);
+            this.hoursMenuItem_5.Text = "5 hours";
+            this.hoursMenuItem_5.Click += new System.EventHandler(this.hoursMenuItem_5_Click);
+            // 
+            // hoursMenuItem_10
+            // 
+            this.hoursMenuItem_10.Name = "hoursMenuItem_10";
+            this.hoursMenuItem_10.Size = new System.Drawing.Size(152, 22);
+            this.hoursMenuItem_10.Text = "10 hours";
+            this.hoursMenuItem_10.Click += new System.EventHandler(this.hoursMenuItem_10_Click);
+            // 
+            // hoursMenuItem_15
+            // 
+            this.hoursMenuItem_15.Name = "hoursMenuItem_15";
+            this.hoursMenuItem_15.Size = new System.Drawing.Size(152, 22);
+            this.hoursMenuItem_15.Text = "15 hours";
+            this.hoursMenuItem_15.Click += new System.EventHandler(this.hoursMenuItem_15_Click);
+            // 
+            // hoursMenuItem_24
+            // 
+            this.hoursMenuItem_24.Name = "hoursMenuItem_24";
+            this.hoursMenuItem_24.Size = new System.Drawing.Size(152, 22);
+            this.hoursMenuItem_24.Text = "24 hours";
+            this.hoursMenuItem_24.Click += new System.EventHandler(this.hoursMenuItem_24_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -237,6 +355,7 @@
             this.authorsListBox.Size = new System.Drawing.Size(216, 172);
             this.authorsListBox.TabIndex = 9;
             this.authorsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.authorsListBox_KeyDown);
+            this.authorsListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.authorsListBox_MouseDown);
             // 
             // groupBox3
             // 
@@ -295,6 +414,7 @@
             this.tagsListBox.Size = new System.Drawing.Size(216, 172);
             this.tagsListBox.TabIndex = 9;
             this.tagsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tagsListBox_KeyDown);
+            this.tagsListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tagsListBox_MouseDown);
             // 
             // browseButton
             // 
@@ -454,13 +574,12 @@
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.onFilepathDoubleClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
-
             // filepathDataGridViewTextBoxColumn
             // 
             this.filepathDataGridViewTextBoxColumn.DataPropertyName = "filepath";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.filepathDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.filepathDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.filepathDataGridViewTextBoxColumn.HeaderText = "filepath";
             this.filepathDataGridViewTextBoxColumn.Name = "filepathDataGridViewTextBoxColumn";
             this.filepathDataGridViewTextBoxColumn.ReadOnly = true;
@@ -496,7 +615,6 @@
             this.devOrgDBDataSet.DataSetName = "DevOrgDBDataSet";
             this.devOrgDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-
             // fileTagsBindingSource
             // 
             this.fileTagsBindingSource.DataMember = "FileTags";
@@ -575,142 +693,42 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-
-            // devOrgDBDataSetBindingSource
-            // 
-            this.devOrgDBDataSetBindingSource.DataSource = this.devOrgDBDataSet;
-            this.devOrgDBDataSetBindingSource.Position = 0;
-            // 
-            // devOrgDBDataSet
-            // 
-            this.devOrgDBDataSet.DataSetName = "DevOrgDBDataSet";
-            this.devOrgDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // fileTagsTableAdapter
             // 
             this.fileTagsTableAdapter.ClearBeforeFill = true;
             // 
-            // filepathDataGridViewTextBoxColumn
-
             // updateTimer
             // 
             this.updateTimer.Enabled = true;
             this.updateTimer.Interval = 300000;
             // 
-            // optionsToolStripMenuItem
+            // newTagsContextMenu
             // 
-            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.timerOnOffToolStripMenuItem,
-            this.timerIntervalToolStripMenuItem});
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.optionsToolStripMenuItem.Text = "Options";
+            this.newTagsContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem});
+            this.newTagsContextMenu.Name = "newTagsContextMenu";
+            this.newTagsContextMenu.Size = new System.Drawing.Size(108, 26);
             // 
-            // timerOnOffToolStripMenuItem
+            // deleteToolStripMenuItem
             // 
-            this.timerOnOffToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.timerOnMenuItem,
-            this.timerOffMenuItem});
-            this.timerOnOffToolStripMenuItem.Name = "timerOnOffToolStripMenuItem";
-            this.timerOnOffToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.timerOnOffToolStripMenuItem.Text = "Timer On/Off";
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
-            // timerOnMenuItem
+            // authorsContextMenu
             // 
-            this.timerOnMenuItem.Checked = true;
-            this.timerOnMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.timerOnMenuItem.Name = "timerOnMenuItem";
-            this.timerOnMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.timerOnMenuItem.Text = "Timer On";
-            this.timerOnMenuItem.Click += new System.EventHandler(this.timerOnMenuItem_Click);
+            this.authorsContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem1});
+            this.authorsContextMenu.Name = "authorsContextMenu";
+            this.authorsContextMenu.Size = new System.Drawing.Size(108, 26);
             // 
-            // timerOffMenuItem
+            // deleteToolStripMenuItem1
             // 
-            this.timerOffMenuItem.Name = "timerOffMenuItem";
-            this.timerOffMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.timerOffMenuItem.Text = "Timer Off";
-            this.timerOffMenuItem.Click += new System.EventHandler(this.timerOffMenuItem_Click);
-            // 
-            // timerIntervalToolStripMenuItem
-            // 
-            this.timerIntervalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.minutesMenuItem_5,
-            this.minutesMenuItem_10,
-            this.minutesMenuItem_15,
-            this.minutesMenuItem_30,
-            this.hourMenuItem_1,
-            this.hoursMenuItem_5,
-            this.hoursMenuItem_10,
-            this.hoursMenuItem_15,
-            this.hoursMenuItem_24});
-            this.timerIntervalToolStripMenuItem.Name = "timerIntervalToolStripMenuItem";
-            this.timerIntervalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.timerIntervalToolStripMenuItem.Text = "Timer Interval";
-            // 
-            // minutesMenuItem_5
-            // 
-            this.minutesMenuItem_5.Checked = true;
-            this.minutesMenuItem_5.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.minutesMenuItem_5.Name = "minutesMenuItem_5";
-            this.minutesMenuItem_5.Size = new System.Drawing.Size(152, 22);
-            this.minutesMenuItem_5.Text = "5 minutes";
-            this.minutesMenuItem_5.Click += new System.EventHandler(this.minutesMenuItem_5_Click);
-            // 
-            // minutesMenuItem_10
-            // 
-            this.minutesMenuItem_10.Name = "minutesMenuItem_10";
-            this.minutesMenuItem_10.Size = new System.Drawing.Size(152, 22);
-            this.minutesMenuItem_10.Text = "10 minutes";
-            this.minutesMenuItem_10.Click += new System.EventHandler(this.minutesMenuItem_10_Click);
-            // 
-            // minutesMenuItem_15
-            // 
-            this.minutesMenuItem_15.Name = "minutesMenuItem_15";
-            this.minutesMenuItem_15.Size = new System.Drawing.Size(152, 22);
-            this.minutesMenuItem_15.Text = "15 minutes";
-            this.minutesMenuItem_15.Click += new System.EventHandler(this.minutesMenuItem_15_Click);
-            // 
-            // minutesMenuItem_30
-            // 
-            this.minutesMenuItem_30.Name = "minutesMenuItem_30";
-            this.minutesMenuItem_30.Size = new System.Drawing.Size(152, 22);
-            this.minutesMenuItem_30.Text = "30 minutes";
-            this.minutesMenuItem_30.Click += new System.EventHandler(this.minutesMenuItem_30_Click);
-            // 
-            // hourMenuItem_1
-            // 
-            this.hourMenuItem_1.Name = "hourMenuItem_1";
-            this.hourMenuItem_1.Size = new System.Drawing.Size(152, 22);
-            this.hourMenuItem_1.Text = "1 hour";
-            this.hourMenuItem_1.Click += new System.EventHandler(this.hourMenuItem_1_Click);
-            // 
-            // hoursMenuItem_5
-            // 
-            this.hoursMenuItem_5.Name = "hoursMenuItem_5";
-            this.hoursMenuItem_5.Size = new System.Drawing.Size(152, 22);
-            this.hoursMenuItem_5.Text = "5 hours";
-            this.hoursMenuItem_5.Click += new System.EventHandler(this.hoursMenuItem_5_Click);
-            // 
-            // hoursMenuItem_10
-            // 
-            this.hoursMenuItem_10.Name = "hoursMenuItem_10";
-            this.hoursMenuItem_10.Size = new System.Drawing.Size(152, 22);
-            this.hoursMenuItem_10.Text = "10 hours";
-            this.hoursMenuItem_10.Click += new System.EventHandler(this.hoursMenuItem_10_Click);
-            // 
-            // hoursMenuItem_15
-            // 
-            this.hoursMenuItem_15.Name = "hoursMenuItem_15";
-            this.hoursMenuItem_15.Size = new System.Drawing.Size(152, 22);
-            this.hoursMenuItem_15.Text = "15 hours";
-            this.hoursMenuItem_15.Click += new System.EventHandler(this.hoursMenuItem_15_Click);
-            // 
-            // hoursMenuItem_24
-            // 
-            this.hoursMenuItem_24.Name = "hoursMenuItem_24";
-            this.hoursMenuItem_24.Size = new System.Drawing.Size(152, 22);
-            this.hoursMenuItem_24.Text = "24 hours";
-            this.hoursMenuItem_24.Click += new System.EventHandler(this.hoursMenuItem_24_Click);
+            this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
+            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem1.Text = "Delete";
+            this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -748,11 +766,13 @@
             this.DatabaseTab.ResumeLayout(false);
             this.DatabaseTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileTagsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileTagsBindingSource1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.devOrgDBDataSet)).EndInit();
+            this.newTagsContextMenu.ResumeLayout(false);
+            this.authorsContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -825,6 +845,10 @@
         private System.Windows.Forms.ToolStripMenuItem hoursMenuItem_15;
         private System.Windows.Forms.ToolStripMenuItem hoursMenuItem_24;
         private System.Windows.Forms.Timer updateTimer;
+        private System.Windows.Forms.ContextMenuStrip newTagsContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip authorsContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem1;
     }
 }
 

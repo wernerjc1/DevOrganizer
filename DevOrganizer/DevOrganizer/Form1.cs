@@ -585,5 +585,31 @@ namespace DevOrganizer
 
             updateTimer.Interval = 86400000;
         }
+
+        private void tagsListBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right && tagsListBox.SelectedItem != null)
+            {
+                this.newTagsContextMenu.Show(Cursor.Position);
+            }
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tagsListBox.Items.Remove(tagsListBox.SelectedItem);
+        }
+
+        private void authorsListBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right && authorsListBox.SelectedItem != null)
+            {
+                this.authorsContextMenu.Show(Cursor.Position);
+            }
+        }
+
+        private void deleteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            authorsListBox.Items.Remove(authorsListBox.SelectedItem);
+        }
     }
 }

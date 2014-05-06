@@ -326,6 +326,25 @@ namespace DevOrganizer
 
         }
 
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            // Update database
+            foreach (DataRow dr in this.devOrgDBDataSet.Tables[0].Rows)
+            {
+                String path = dr["filepath"].ToString();
+                if (File.Exists(path))
+                    this.fileTagsTableAdapter.UpdateSync("true", path);
+                else
+                    this.fileTagsTableAdapter.UpdateSync("false", path);
+            }
+            // Update datagridview
+            foreach (DataGridViewRow row in this.dataGridView1.Rows)
+            {
+                if (row.Cells[0].Value.ToString() == "false")
+                    row.DefaultCellStyle.BackColor = Color.Red;
+            }
+        }
+
 
     }
 }

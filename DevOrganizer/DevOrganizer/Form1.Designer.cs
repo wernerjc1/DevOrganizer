@@ -76,8 +76,8 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showFormToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.hideToContextMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.addTab.SuspendLayout();
@@ -348,6 +348,7 @@
             // 
             // DatabaseTab
             // 
+            this.DatabaseTab.Controls.Add(this.updateButton);
             this.DatabaseTab.Controls.Add(this.button3);
             this.DatabaseTab.Controls.Add(this.deleteButton);
             this.DatabaseTab.Controls.Add(this.loadButton);
@@ -363,7 +364,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(11, 169);
+            this.button3.Location = new System.Drawing.Point(11, 174);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 41);
             this.button3.TabIndex = 5;
@@ -373,7 +374,7 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(11, 111);
+            this.deleteButton.Location = new System.Drawing.Point(11, 127);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 4;
@@ -506,31 +507,33 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showFormToolStripMenuItem1,
-            this.hideToContextMenuToolStripMenuItem,
             this.exitToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(192, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(135, 48);
             // 
             // showFormToolStripMenuItem1
             // 
             this.showFormToolStripMenuItem1.Name = "showFormToolStripMenuItem1";
-            this.showFormToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
+            this.showFormToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.showFormToolStripMenuItem1.Text = "Show Form";
             this.showFormToolStripMenuItem1.Click += new System.EventHandler(this.showFormToolStripMenuItem1_Click);
-            // 
-            // hideToContextMenuToolStripMenuItem
-            // 
-            this.hideToContextMenuToolStripMenuItem.Name = "hideToContextMenuToolStripMenuItem";
-            this.hideToContextMenuToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.hideToContextMenuToolStripMenuItem.Text = "Hide to Context Menu";
-            this.hideToContextMenuToolStripMenuItem.Click += new System.EventHandler(this.hideToContextMenuToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
+            // 
+            // updateButton
+            // 
+            this.updateButton.Location = new System.Drawing.Point(11, 82);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(75, 23);
+            this.updateButton.TabIndex = 6;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // Form1
             // 
@@ -621,12 +624,12 @@
         private System.Windows.Forms.ToolStripMenuItem hideToSystemTrayToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem showFormToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem hideToContextMenuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
         private System.Windows.Forms.DataGridViewTextBoxColumn filepathDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tagsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn author;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.Button updateButton;
     }
 }
 

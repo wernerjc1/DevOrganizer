@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gAYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hideToSystemTrayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -59,7 +60,6 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.syncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.filepathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tagsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,7 +74,6 @@
             this.fileTagsTableAdapter = new DevOrganizer.DevOrgDBDataSetTableAdapters.FileTagsTableAdapter();
             this.fileTagsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.hideToSystemTrayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showFormToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.hideToContextMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -117,6 +116,13 @@
             this.gAYToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.gAYToolStripMenuItem.Text = "File";
             this.gAYToolStripMenuItem.Click += new System.EventHandler(this.gAYToolStripMenuItem_Click);
+            // 
+            // hideToSystemTrayToolStripMenuItem
+            // 
+            this.hideToSystemTrayToolStripMenuItem.Name = "hideToSystemTrayToolStripMenuItem";
+            this.hideToSystemTrayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hideToSystemTrayToolStripMenuItem.Text = "Hide to System Tray";
+            this.hideToSystemTrayToolStripMenuItem.Click += new System.EventHandler(this.hideToSystemTrayToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -392,7 +398,6 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.syncDataGridViewTextBoxColumn,
             this.filepathDataGridViewTextBoxColumn,
             this.tagsDataGridViewTextBoxColumn,
             this.author,
@@ -405,15 +410,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.onFilepathDoubleClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
-            // 
-            // syncDataGridViewTextBoxColumn
-            // 
-            this.syncDataGridViewTextBoxColumn.DataPropertyName = "sync";
-            this.syncDataGridViewTextBoxColumn.HeaderText = "sync";
-            this.syncDataGridViewTextBoxColumn.Name = "syncDataGridViewTextBoxColumn";
-            this.syncDataGridViewTextBoxColumn.ReadOnly = true;
-            this.syncDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.syncDataGridViewTextBoxColumn.Width = 50;
             // 
             // filepathDataGridViewTextBoxColumn
             // 
@@ -473,9 +469,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(457, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 14);
+            this.label1.Size = new System.Drawing.Size(83, 14);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Search";
+            this.label1.Text = "Search By Tag";
             // 
             // button2
             // 
@@ -504,13 +500,6 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
-            // 
-            // hideToSystemTrayToolStripMenuItem
-            // 
-            this.hideToSystemTrayToolStripMenuItem.Name = "hideToSystemTrayToolStripMenuItem";
-            this.hideToSystemTrayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.hideToSystemTrayToolStripMenuItem.Text = "Hide to System Tray";
-            this.hideToSystemTrayToolStripMenuItem.Click += new System.EventHandler(this.hideToSystemTrayToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
@@ -625,11 +614,6 @@
         private System.Windows.Forms.Button loadButton;
         private System.Windows.Forms.BindingSource fileTagsBindingSource1;
         private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn syncDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn filepathDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tagsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn author;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
@@ -638,6 +622,10 @@
         private System.Windows.Forms.ToolStripMenuItem showFormToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem hideToContextMenuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filepathDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tagsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn author;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
     }
 }
 

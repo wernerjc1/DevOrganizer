@@ -684,6 +684,7 @@ namespace DevOrganizer {
             public bool IssyncNull() {
                 return this.IsNull(this.tableFileTags.syncColumn);
             }
+
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]

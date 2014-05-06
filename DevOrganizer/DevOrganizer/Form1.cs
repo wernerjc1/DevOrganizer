@@ -27,7 +27,8 @@ namespace DevOrganizer
             {
                 this.tabControl1.SelectedTab = DatabaseTab;
             }
-            this.tabControl1.SelectedTab.Text = SearchBox.Text;
+            this.fileTagsTableAdapter.FillByFilepathsWithTag(this.devOrgDBDataSet.FileTags, SearchBox.Text);
+           // this.tabControl1.SelectedTab.Text = SearchBox.Text;
         }
 
         private void browseButton_Click(object sender, EventArgs e)
@@ -148,6 +149,7 @@ namespace DevOrganizer
         {
             this.devOrgDBDataSet.Clear();
             this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags);
+            this.fileTagsTableAdapter.FillTable(this.devOrgDBDataSet.FileTags);
         }
 
         private void AddProjectButton_OnClick(object sender, EventArgs e)

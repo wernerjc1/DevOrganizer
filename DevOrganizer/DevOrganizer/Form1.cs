@@ -28,11 +28,35 @@ namespace DevOrganizer
 
         private void onSearchButtonClick(object sender, EventArgs e)
         {
+            if (SearchBox.Text == "" || SearchBox.Text == GreyedText)
+            {
+                return;
+            }
             if (this.tabControl1.SelectedTab == addTab)
             {
                 this.tabControl1.SelectedTab = DatabaseTab;
             }
             this.fileTagsTableAdapter.FillByFilepathsWithTag(this.devOrgDBDataSet.FileTags, SearchBox.Text);
+            char[] delimiterChars = {','};
+
+            string[] tags = SearchBox.Text.Split(delimiterChars);
+            if (tags.Length == 1)
+            {
+                this.fileTagsTableAdapter.FillByFilepathsWithTag(this.devOrgDBDataSet.FileTags, tags[0]);
+            }
+            else if (tags.Length == 2)
+            {
+                this.fileTagsTableAdapter.FillByFilepathsWithTwoTags(this.devOrgDBDataSet.FileTags, tags[0], tags[1]);
+            }
+            else if (tags.Length >= 3)
+            {
+                if (tags.Length > 3)
+                {
+                    MessageBox.Show("Omitting search to three tags.");
+                }
+                this.fileTagsTableAdapter.FillByFilepathsWithThreeTags(this.devOrgDBDataSet.FileTags, tags[0], tags[1], tags[2]);
+            }
+
            // this.tabControl1.SelectedTab.Text = SearchBox.Text;
         }
 

@@ -147,6 +147,7 @@ namespace DevOrganizer
         {
             // TODO: This line of code loads data into the 'devOrgDBDataSet.FileTags' table. You can move, or remove it, as needed.
             this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags);
+            //this.updateButton_Click(sender, e);
             ico = notifyIcon1.Icon;
         }
 
@@ -155,6 +156,7 @@ namespace DevOrganizer
             this.devOrgDBDataSet.Clear();
             this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags);
             this.fileTagsTableAdapter.FillTable(this.devOrgDBDataSet.FileTags);
+            this.updateButton_Click(sender, e);
         }
 
         private void AddProjectButton_OnClick(object sender, EventArgs e)
@@ -329,19 +331,18 @@ namespace DevOrganizer
         private void updateButton_Click(object sender, EventArgs e)
         {
             // Update database
+            int i = 0;
             foreach (DataRow dr in this.devOrgDBDataSet.Tables[0].Rows)
             {
                 String path = dr["filepath"].ToString();
                 if (File.Exists(path))
                     this.fileTagsTableAdapter.UpdateSync("true", path);
                 else
+                {
                     this.fileTagsTableAdapter.UpdateSync("false", path);
-            }
-            // Update datagridview
-            foreach (DataGridViewRow row in this.dataGridView1.Rows)
-            {
-                if (row.Cells[0].Value.ToString() == "false")
-                    row.DefaultCellStyle.BackColor = Color.Red;
+                    this.dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+                i++;
             }
         }
 

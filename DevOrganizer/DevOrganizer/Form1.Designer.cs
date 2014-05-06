@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gAYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -300,8 +300,8 @@
             // addTab
             // 
             this.addTab.Controls.Add(this.groupBox4);
-            this.addTab.Controls.Add(this.groupBox3);
             this.addTab.Controls.Add(this.groupBox2);
+            this.addTab.Controls.Add(this.groupBox3);
             this.addTab.Controls.Add(this.browseButton);
             this.addTab.Controls.Add(this.label3);
             this.addTab.Controls.Add(this.pathTextBox);
@@ -321,16 +321,16 @@
             this.groupBox4.Controls.Add(this.addAuthorButton);
             this.groupBox4.Controls.Add(this.authorsTextBox);
             this.groupBox4.Controls.Add(this.authorsListBox);
-            this.groupBox4.Location = new System.Drawing.Point(476, 84);
+            this.groupBox4.Location = new System.Drawing.Point(636, 84);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(228, 227);
+            this.groupBox4.Size = new System.Drawing.Size(307, 227);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Authors";
             // 
             // addAuthorButton
             // 
-            this.addAuthorButton.Location = new System.Drawing.Point(147, 19);
+            this.addAuthorButton.Location = new System.Drawing.Point(226, 18);
             this.addAuthorButton.Name = "addAuthorButton";
             this.addAuthorButton.Size = new System.Drawing.Size(75, 23);
             this.addAuthorButton.TabIndex = 11;
@@ -342,7 +342,7 @@
             // 
             this.authorsTextBox.Location = new System.Drawing.Point(6, 19);
             this.authorsTextBox.Name = "authorsTextBox";
-            this.authorsTextBox.Size = new System.Drawing.Size(135, 20);
+            this.authorsTextBox.Size = new System.Drawing.Size(214, 20);
             this.authorsTextBox.TabIndex = 10;
             this.authorsTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.authorsTextBox_KeyDown);
             // 
@@ -350,9 +350,9 @@
             // 
             this.authorsListBox.FormattingEnabled = true;
             this.authorsListBox.ItemHeight = 14;
-            this.authorsListBox.Location = new System.Drawing.Point(6, 48);
+            this.authorsListBox.Location = new System.Drawing.Point(6, 49);
             this.authorsListBox.Name = "authorsListBox";
-            this.authorsListBox.Size = new System.Drawing.Size(216, 172);
+            this.authorsListBox.Size = new System.Drawing.Size(295, 172);
             this.authorsListBox.TabIndex = 9;
             this.authorsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.authorsListBox_KeyDown);
             this.authorsListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.authorsListBox_MouseDown);
@@ -360,9 +360,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.descriptionTextBox);
-            this.groupBox3.Location = new System.Drawing.Point(242, 84);
+            this.groupBox3.Location = new System.Drawing.Point(321, 84);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(228, 227);
+            this.groupBox3.Size = new System.Drawing.Size(307, 227);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Description";
@@ -372,7 +372,7 @@
             this.descriptionTextBox.Location = new System.Drawing.Point(6, 19);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(216, 201);
+            this.descriptionTextBox.Size = new System.Drawing.Size(295, 201);
             this.descriptionTextBox.TabIndex = 10;
             // 
             // groupBox2
@@ -382,14 +382,14 @@
             this.groupBox2.Controls.Add(this.tagsListBox);
             this.groupBox2.Location = new System.Drawing.Point(8, 84);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(228, 227);
+            this.groupBox2.Size = new System.Drawing.Size(307, 227);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Tags";
             // 
             // addTagButton
             // 
-            this.addTagButton.Location = new System.Drawing.Point(147, 19);
+            this.addTagButton.Location = new System.Drawing.Point(226, 18);
             this.addTagButton.Name = "addTagButton";
             this.addTagButton.Size = new System.Drawing.Size(75, 23);
             this.addTagButton.TabIndex = 11;
@@ -401,7 +401,7 @@
             // 
             this.tagsTextBox.Location = new System.Drawing.Point(6, 19);
             this.tagsTextBox.Name = "tagsTextBox";
-            this.tagsTextBox.Size = new System.Drawing.Size(135, 20);
+            this.tagsTextBox.Size = new System.Drawing.Size(214, 20);
             this.tagsTextBox.TabIndex = 10;
             this.tagsTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tagsTextBox_KeyDown);
             // 
@@ -411,14 +411,14 @@
             this.tagsListBox.ItemHeight = 14;
             this.tagsListBox.Location = new System.Drawing.Point(6, 48);
             this.tagsListBox.Name = "tagsListBox";
-            this.tagsListBox.Size = new System.Drawing.Size(216, 172);
+            this.tagsListBox.Size = new System.Drawing.Size(295, 172);
             this.tagsListBox.TabIndex = 9;
             this.tagsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tagsListBox_KeyDown);
             this.tagsListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tagsListBox_MouseDown);
             // 
             // browseButton
             // 
-            this.browseButton.Location = new System.Drawing.Point(453, 32);
+            this.browseButton.Location = new System.Drawing.Point(865, 35);
             this.browseButton.Name = "browseButton";
             this.browseButton.Size = new System.Drawing.Size(75, 23);
             this.browseButton.TabIndex = 8;
@@ -439,7 +439,7 @@
             // 
             this.pathTextBox.Location = new System.Drawing.Point(118, 35);
             this.pathTextBox.Name = "pathTextBox";
-            this.pathTextBox.Size = new System.Drawing.Size(329, 20);
+            this.pathTextBox.Size = new System.Drawing.Size(741, 20);
             this.pathTextBox.TabIndex = 6;
             // 
             // groupBox1
@@ -479,7 +479,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(301, 329);
+            this.button1.Location = new System.Drawing.Point(417, 338);
             this.button1.MinimumSize = new System.Drawing.Size(113, 37);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 37);
@@ -558,6 +558,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -577,9 +580,9 @@
             // filepathDataGridViewTextBoxColumn
             // 
             this.filepathDataGridViewTextBoxColumn.DataPropertyName = "filepath";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.filepathDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.filepathDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.filepathDataGridViewTextBoxColumn.HeaderText = "filepath";
             this.filepathDataGridViewTextBoxColumn.Name = "filepathDataGridViewTextBoxColumn";
             this.filepathDataGridViewTextBoxColumn.ReadOnly = true;
@@ -746,7 +749,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(736, 513);
+            this.MinimumSize = new System.Drawing.Size(972, 513);
             this.Name = "Form1";
             this.Text = "Devorganizer";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -588,8 +588,14 @@ namespace DevOrganizer
 
         private void tagsListBox_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == System.Windows.Forms.MouseButtons.Right && tagsListBox.SelectedItem != null)
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
+                if (tagsListBox.SelectedItem == null)
+                {
+                    var item = tagsListBox.IndexFromPoint(e.Location);
+                    if (item >= 0)
+                        tagsListBox.SelectedIndex = item;
+                }
                 this.newTagsContextMenu.Show(Cursor.Position);
             }
         }
@@ -601,8 +607,14 @@ namespace DevOrganizer
 
         private void authorsListBox_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == System.Windows.Forms.MouseButtons.Right && authorsListBox.SelectedItem != null)
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
+                if (authorsListBox.SelectedItem == null)
+                {
+                    var item = authorsListBox.IndexFromPoint(e.Location);
+                    if (item >= 0)
+                        authorsListBox.SelectedIndex = item;                    
+                }
                 this.authorsContextMenu.Show(Cursor.Position);
             }
         }

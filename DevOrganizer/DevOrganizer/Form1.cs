@@ -185,8 +185,22 @@ namespace DevOrganizer
 
         private void AddProjectButton_OnClick(object sender, EventArgs e)
         {
+            this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags);
             string pathEntry = "";
-            pathEntry += pathTextBox.Text.ToString();
+            if (pathTextBox.Text != "")
+            {
+                pathEntry += pathTextBox.Text.ToString();
+                for (int i = 0; i < devOrgDBDataSet.FileTags.Rows.Count; i++)
+                {
+                    if (pathEntry == devOrgDBDataSet.FileTags.Rows[i].ItemArray[1].ToString())
+                    {
+                        MessageBox.Show("Error: File Already in Database");
+                        return;
+                    }
+                }
+            }
+            
+
             string tagEntry = "";
             
             if (tagsListBox.Items.Count > 0)
@@ -297,16 +311,17 @@ namespace DevOrganizer
 
         private void copyClipboard_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedCells.Count == 1)
-            {
-                string selection = dataGridView1.CurrentCell.Value.ToString();
+                string selection = "";
+                for (int i = 0; i < dataGridView1.SelectedCells.Count-1; i++)
+                {
+                    selection += dataGridView1.SelectedCells[i].Value.ToString(); //= dataGridView1.CurrentCell.Value.ToString();
+                    selection += ",";
+                }
+                selection += dataGridView1.SelectedCells[dataGridView1.SelectedCells.Count-1].Value.ToString();
                 Clipboard.SetText(selection);
                 copiedLabel.Text = "Copied";
                 copiedLabel.ForeColor = Color.Black;
                 timer1.Start();
-
-    
-            }
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

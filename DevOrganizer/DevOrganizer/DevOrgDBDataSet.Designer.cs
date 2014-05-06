@@ -985,14 +985,14 @@ namespace DevOrganizer.DevOrgDBDataSetTableAdapters {
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@tag1";
-            param.DbType = global::System.Data.DbType.String;
-            param.Size = 2147483647;
+            param.DbType = global::System.Data.DbType.Object;
+            param.Size = 1024;
             param.SourceColumn = "tags";
             this._commandCollection[4].Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@tag2";
-            param.DbType = global::System.Data.DbType.String;
-            param.Size = 2147483647;
+            param.DbType = global::System.Data.DbType.Object;
+            param.Size = 1024;
             param.SourceColumn = "tags";
             this._commandCollection[4].Parameters.Add(param);
             this._commandCollection[5] = new global::System.Data.SQLite.SQLiteCommand();
@@ -1262,19 +1262,19 @@ namespace DevOrganizer.DevOrgDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByFilepathsWithTwoTags(DevOrgDBDataSet.FileTagsDataTable dataTable, string tag1, string tag2) {
+        public virtual int FillByFilepathsWithTwoTags(DevOrgDBDataSet.FileTagsDataTable dataTable, object tag1, object tag2) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((tag1 == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("tag1");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(tag1));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((object)(tag1));
             }
             if ((tag2 == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("tag2");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(tag2));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((object)(tag2));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1287,19 +1287,19 @@ namespace DevOrganizer.DevOrgDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DevOrgDBDataSet.FileTagsDataTable GetFilepathsWithTwoTags(string tag1, string tag2) {
+        public virtual DevOrgDBDataSet.FileTagsDataTable GetFilepathsWithTwoTags(object tag1, object tag2) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((tag1 == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("tag1");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(tag1));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((object)(tag1));
             }
             if ((tag2 == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("tag2");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(tag2));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((object)(tag2));
             }
             DevOrgDBDataSet.FileTagsDataTable dataTable = new DevOrgDBDataSet.FileTagsDataTable();
             this.Adapter.Fill(dataTable);

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gAYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideToSystemTrayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,10 +62,6 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.filepathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tagsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.devOrgDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.devOrgDBDataSet = new DevOrganizer.DevOrgDBDataSet();
             this.fileTagsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -81,6 +77,10 @@
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.copiedLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.filepathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tagsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.addTab.SuspendLayout();
@@ -426,36 +426,6 @@
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.onFilepathDoubleClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
-            // filepathDataGridViewTextBoxColumn
-            // 
-            this.filepathDataGridViewTextBoxColumn.DataPropertyName = "filepath";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.filepathDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.filepathDataGridViewTextBoxColumn.HeaderText = "filepath";
-            this.filepathDataGridViewTextBoxColumn.Name = "filepathDataGridViewTextBoxColumn";
-            this.filepathDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // tagsDataGridViewTextBoxColumn
-            // 
-            this.tagsDataGridViewTextBoxColumn.DataPropertyName = "tags";
-            this.tagsDataGridViewTextBoxColumn.HeaderText = "tags";
-            this.tagsDataGridViewTextBoxColumn.Name = "tagsDataGridViewTextBoxColumn";
-            this.tagsDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // author
-            // 
-            this.author.DataPropertyName = "author";
-            this.author.HeaderText = "author";
-            this.author.Name = "author";
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "description";
-            this.description.HeaderText = "description";
-            this.description.Name = "description";
-            this.description.Width = 300;
-            // 
             // devOrgDBDataSetBindingSource
             // 
             this.devOrgDBDataSetBindingSource.DataSource = this.devOrgDBDataSet;
@@ -557,6 +527,37 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // filepathDataGridViewTextBoxColumn
+            // 
+            this.filepathDataGridViewTextBoxColumn.DataPropertyName = "filepath";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.filepathDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.filepathDataGridViewTextBoxColumn.HeaderText = "filepath";
+            this.filepathDataGridViewTextBoxColumn.Name = "filepathDataGridViewTextBoxColumn";
+            this.filepathDataGridViewTextBoxColumn.ReadOnly = true;
+            this.filepathDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // tagsDataGridViewTextBoxColumn
+            // 
+            this.tagsDataGridViewTextBoxColumn.DataPropertyName = "tags";
+            this.tagsDataGridViewTextBoxColumn.HeaderText = "tags";
+            this.tagsDataGridViewTextBoxColumn.Name = "tagsDataGridViewTextBoxColumn";
+            this.tagsDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // author
+            // 
+            this.author.DataPropertyName = "author";
+            this.author.HeaderText = "author";
+            this.author.Name = "author";
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "description";
+            this.description.Name = "description";
+            this.description.Width = 300;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -649,12 +650,12 @@
         private System.Windows.Forms.ToolStripMenuItem showFormToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
         private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.Label copiedLabel;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridViewTextBoxColumn filepathDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tagsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn author;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
-        private System.Windows.Forms.Label copiedLabel;
-        private System.Windows.Forms.Timer timer1;
     }
 }
 

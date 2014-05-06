@@ -63,15 +63,14 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-<<<<<<< HEAD
-=======
+
             this.filepathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tagsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.devOrgDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.devOrgDBDataSet = new DevOrganizer.DevOrgDBDataSet();
->>>>>>> fe35929953897c48a8ccd23caba4269f54eaad64
+
             this.fileTagsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -83,7 +82,7 @@
             this.showFormToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-<<<<<<< HEAD
+
             this.devOrgDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.devOrgDBDataSet = new DevOrganizer.DevOrgDBDataSet();
             this.fileTagsTableAdapter = new DevOrganizer.DevOrgDBDataSetTableAdapters.FileTagsTableAdapter();
@@ -91,7 +90,6 @@
             this.tagsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-=======
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerOnOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,7 +105,6 @@
             this.hoursMenuItem_10 = new System.Windows.Forms.ToolStripMenuItem();
             this.hoursMenuItem_15 = new System.Windows.Forms.ToolStripMenuItem();
             this.hoursMenuItem_24 = new System.Windows.Forms.ToolStripMenuItem();
->>>>>>> fe35929953897c48a8ccd23caba4269f54eaad64
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.addTab.SuspendLayout();
@@ -463,8 +460,7 @@
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.onFilepathDoubleClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
-<<<<<<< HEAD
-=======
+
             // filepathDataGridViewTextBoxColumn
             // 
             this.filepathDataGridViewTextBoxColumn.DataPropertyName = "filepath";
@@ -506,7 +502,7 @@
             this.devOrgDBDataSet.DataSetName = "DevOrgDBDataSet";
             this.devOrgDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
->>>>>>> fe35929953897c48a8ccd23caba4269f54eaad64
+
             // fileTagsBindingSource
             // 
             this.fileTagsBindingSource.DataMember = "FileTags";
@@ -585,7 +581,7 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-<<<<<<< HEAD
+
             // devOrgDBDataSetBindingSource
             // 
             this.devOrgDBDataSetBindingSource.DataSource = this.devOrgDBDataSet;
@@ -601,9 +597,8 @@
             this.fileTagsTableAdapter.ClearBeforeFill = true;
             // 
             // filepathDataGridViewTextBoxColumn
-=======
+
             // updateTimer
->>>>>>> fe35929953897c48a8ccd23caba4269f54eaad64
             // 
             this.updateTimer.Enabled = true;
             this.updateTimer.Interval = 300000;

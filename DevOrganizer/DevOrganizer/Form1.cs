@@ -18,8 +18,13 @@ namespace DevOrganizer
         public Form1()
         {
             InitializeComponent();
+            GreyedText = "tag1, tag2, ...";
+            SearchBox.Text = GreyedText;
+            SearchBox.ForeColor = Color.Gray;
         }
         private Icon ico;
+        private string GreyedText;
+
 
         private void onSearchButtonClick(object sender, EventArgs e)
         {
@@ -307,6 +312,18 @@ namespace DevOrganizer
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+
+        private void SearchBox_onEnter(object sender, EventArgs e)
+        {
+            if (SearchBox.ForeColor == Color.Gray)
+            {
+                SearchBox.ForeColor = Color.Black;
+                SearchBox.Text = "";
+            }
+
         }
 
 

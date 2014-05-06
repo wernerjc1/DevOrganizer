@@ -460,6 +460,7 @@
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.Size = new System.Drawing.Size(191, 20);
             this.SearchBox.TabIndex = 2;
+            this.SearchBox.Enter += new System.EventHandler(this.SearchBox_onEnter);
             this.SearchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchBox_KeyDown);
             // 
             // label1

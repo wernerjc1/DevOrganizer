@@ -83,13 +83,7 @@
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
 
-            this.devOrgDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.devOrgDBDataSet = new DevOrganizer.DevOrgDBDataSet();
             this.fileTagsTableAdapter = new DevOrganizer.DevOrgDBDataSetTableAdapters.FileTagsTableAdapter();
-            this.filepathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tagsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerOnOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();

@@ -208,7 +208,7 @@ namespace DevOrganizer
                 tagEntry = tagsListBox.Items[0].ToString();
                 if (tagsListBox.Items.Count > 1)
                 {
-                    for (int i = 0; i < tagsListBox.Items.Count; i++)
+                    for (int i = 1; i < tagsListBox.Items.Count; i++)
                     {
                         tagEntry += ",";
                         tagEntry += tagsListBox.Items[i].ToString();

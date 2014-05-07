@@ -642,5 +642,15 @@ namespace DevOrganizer
         {
             authorsListBox.Items.Remove(authorsListBox.SelectedItem);
         }
+
+        private void readMeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+            {
+                FileName = "UserManual.pdf",
+                UseShellExecute = true,
+                Verb = "open"
+            });
+        }
     }
 }

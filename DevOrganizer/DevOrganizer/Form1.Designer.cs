@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gAYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -580,9 +580,9 @@
             // filepathDataGridViewTextBoxColumn
             // 
             this.filepathDataGridViewTextBoxColumn.DataPropertyName = "filepath";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.filepathDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.filepathDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.filepathDataGridViewTextBoxColumn.HeaderText = "filepath";
             this.filepathDataGridViewTextBoxColumn.Name = "filepathDataGridViewTextBoxColumn";
             this.filepathDataGridViewTextBoxColumn.ReadOnly = true;
@@ -751,7 +751,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(972, 513);
             this.Name = "Form1";
-            this.Text = "Devorganizer";
+            this.Text = "DevOrganizer";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

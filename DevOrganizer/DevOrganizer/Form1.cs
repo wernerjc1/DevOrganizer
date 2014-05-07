@@ -166,13 +166,13 @@ namespace DevOrganizer
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags);
+            this.updateButton_Click(sender, e);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'devOrgDBDataSet.FileTags' table. You can move, or remove it, as needed.
             this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags);
-            //this.updateButton_Click(sender, e);
             ico = notifyIcon1.Icon;
         }
 

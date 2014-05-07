@@ -401,18 +401,21 @@ namespace DevOrganizer
         private void updateButton_Click(object sender, EventArgs e)
         {
             // Update database
-            int i = 0;
             foreach (DataRow dr in this.devOrgDBDataSet.Tables[0].Rows)
             {
                 String path = dr["filepath"].ToString();
-                if (File.Exists(path))
+                if (File.Exists(path) || Directory.Exists(path))
                     this.fileTagsTableAdapter.UpdateSync("true", path);
                 else
-                {
                     this.fileTagsTableAdapter.UpdateSync("false", path);
+            }
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                String path = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                if (File.Exists(path) || Directory.Exists(path))
+                    this.dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                else
                     this.dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                }
-                i++;
             }
         }
 

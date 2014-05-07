@@ -57,12 +57,12 @@
             this.addAuthorButton = new System.Windows.Forms.Button();
             this.authorsTextBox = new System.Windows.Forms.TextBox();
             this.authorsListBox = new System.Windows.Forms.ListBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.addTagButton = new System.Windows.Forms.Button();
             this.tagsTextBox = new System.Windows.Forms.TextBox();
             this.tagsListBox = new System.Windows.Forms.ListBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.browseButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pathTextBox = new System.Windows.Forms.TextBox();
@@ -104,8 +104,8 @@
             this.tabControl1.SuspendLayout();
             this.addTab.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.DatabaseTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -179,14 +179,14 @@
             this.timerOnMenuItem.Checked = true;
             this.timerOnMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.timerOnMenuItem.Name = "timerOnMenuItem";
-            this.timerOnMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.timerOnMenuItem.Size = new System.Drawing.Size(125, 22);
             this.timerOnMenuItem.Text = "Timer On";
             this.timerOnMenuItem.Click += new System.EventHandler(this.timerOnMenuItem_Click);
             // 
             // timerOffMenuItem
             // 
             this.timerOffMenuItem.Name = "timerOffMenuItem";
-            this.timerOffMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.timerOffMenuItem.Size = new System.Drawing.Size(125, 22);
             this.timerOffMenuItem.Text = "Timer Off";
             this.timerOffMenuItem.Click += new System.EventHandler(this.timerOffMenuItem_Click);
             // 
@@ -211,63 +211,63 @@
             this.minutesMenuItem_5.Checked = true;
             this.minutesMenuItem_5.CheckState = System.Windows.Forms.CheckState.Checked;
             this.minutesMenuItem_5.Name = "minutesMenuItem_5";
-            this.minutesMenuItem_5.Size = new System.Drawing.Size(152, 22);
+            this.minutesMenuItem_5.Size = new System.Drawing.Size(132, 22);
             this.minutesMenuItem_5.Text = "5 minutes";
             this.minutesMenuItem_5.Click += new System.EventHandler(this.minutesMenuItem_5_Click);
             // 
             // minutesMenuItem_10
             // 
             this.minutesMenuItem_10.Name = "minutesMenuItem_10";
-            this.minutesMenuItem_10.Size = new System.Drawing.Size(152, 22);
+            this.minutesMenuItem_10.Size = new System.Drawing.Size(132, 22);
             this.minutesMenuItem_10.Text = "10 minutes";
             this.minutesMenuItem_10.Click += new System.EventHandler(this.minutesMenuItem_10_Click);
             // 
             // minutesMenuItem_15
             // 
             this.minutesMenuItem_15.Name = "minutesMenuItem_15";
-            this.minutesMenuItem_15.Size = new System.Drawing.Size(152, 22);
+            this.minutesMenuItem_15.Size = new System.Drawing.Size(132, 22);
             this.minutesMenuItem_15.Text = "15 minutes";
             this.minutesMenuItem_15.Click += new System.EventHandler(this.minutesMenuItem_15_Click);
             // 
             // minutesMenuItem_30
             // 
             this.minutesMenuItem_30.Name = "minutesMenuItem_30";
-            this.minutesMenuItem_30.Size = new System.Drawing.Size(152, 22);
+            this.minutesMenuItem_30.Size = new System.Drawing.Size(132, 22);
             this.minutesMenuItem_30.Text = "30 minutes";
             this.minutesMenuItem_30.Click += new System.EventHandler(this.minutesMenuItem_30_Click);
             // 
             // hourMenuItem_1
             // 
             this.hourMenuItem_1.Name = "hourMenuItem_1";
-            this.hourMenuItem_1.Size = new System.Drawing.Size(152, 22);
+            this.hourMenuItem_1.Size = new System.Drawing.Size(132, 22);
             this.hourMenuItem_1.Text = "1 hour";
             this.hourMenuItem_1.Click += new System.EventHandler(this.hourMenuItem_1_Click);
             // 
             // hoursMenuItem_5
             // 
             this.hoursMenuItem_5.Name = "hoursMenuItem_5";
-            this.hoursMenuItem_5.Size = new System.Drawing.Size(152, 22);
+            this.hoursMenuItem_5.Size = new System.Drawing.Size(132, 22);
             this.hoursMenuItem_5.Text = "5 hours";
             this.hoursMenuItem_5.Click += new System.EventHandler(this.hoursMenuItem_5_Click);
             // 
             // hoursMenuItem_10
             // 
             this.hoursMenuItem_10.Name = "hoursMenuItem_10";
-            this.hoursMenuItem_10.Size = new System.Drawing.Size(152, 22);
+            this.hoursMenuItem_10.Size = new System.Drawing.Size(132, 22);
             this.hoursMenuItem_10.Text = "10 hours";
             this.hoursMenuItem_10.Click += new System.EventHandler(this.hoursMenuItem_10_Click);
             // 
             // hoursMenuItem_15
             // 
             this.hoursMenuItem_15.Name = "hoursMenuItem_15";
-            this.hoursMenuItem_15.Size = new System.Drawing.Size(152, 22);
+            this.hoursMenuItem_15.Size = new System.Drawing.Size(132, 22);
             this.hoursMenuItem_15.Text = "15 hours";
             this.hoursMenuItem_15.Click += new System.EventHandler(this.hoursMenuItem_15_Click);
             // 
             // hoursMenuItem_24
             // 
             this.hoursMenuItem_24.Name = "hoursMenuItem_24";
-            this.hoursMenuItem_24.Size = new System.Drawing.Size(152, 22);
+            this.hoursMenuItem_24.Size = new System.Drawing.Size(132, 22);
             this.hoursMenuItem_24.Text = "24 hours";
             this.hoursMenuItem_24.Click += new System.EventHandler(this.hoursMenuItem_24_Click);
             // 
@@ -357,24 +357,6 @@
             this.authorsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.authorsListBox_KeyDown);
             this.authorsListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.authorsListBox_MouseDown);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.descriptionTextBox);
-            this.groupBox3.Location = new System.Drawing.Point(321, 84);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(307, 227);
-            this.groupBox3.TabIndex = 11;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Description";
-            // 
-            // descriptionTextBox
-            // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(6, 19);
-            this.descriptionTextBox.Multiline = true;
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(295, 201);
-            this.descriptionTextBox.TabIndex = 10;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.addTagButton);
@@ -415,6 +397,24 @@
             this.tagsListBox.TabIndex = 9;
             this.tagsListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tagsListBox_KeyDown);
             this.tagsListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tagsListBox_MouseDown);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.descriptionTextBox);
+            this.groupBox3.Location = new System.Drawing.Point(321, 84);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(307, 227);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Description";
+            // 
+            // descriptionTextBox
+            // 
+            this.descriptionTextBox.Location = new System.Drawing.Point(6, 19);
+            this.descriptionTextBox.Multiline = true;
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(295, 201);
+            this.descriptionTextBox.TabIndex = 10;
             // 
             // browseButton
             // 
@@ -484,7 +484,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 37);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Add";
+            this.button1.Text = "Add Project";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.AddProjectButton_OnClick);
             // 
@@ -760,10 +760,10 @@
             this.addTab.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.DatabaseTab.ResumeLayout(false);

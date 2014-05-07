@@ -18,7 +18,7 @@ namespace DevOrganizer
         public Form1()
         {
             InitializeComponent();
-            GreyedText = "tag1, tag2, ...";
+            GreyedText = "tag1,tag2,...";
             SearchBox.Text = GreyedText;
             SearchBox.ForeColor = Color.Gray;
             copiedLabel.ForeColor = copiedLabel.BackColor;

@@ -304,17 +304,26 @@ namespace DevOrganizer
                 {
 
                     string s = dataGridView1.CurrentCell.Value.ToString();
-                    if (!System.IO.Directory.Exists(s))
+                    if (s.Contains('.')&&System.IO.Directory.Exists(s))
                     {
-                        MessageBox.Show("Not valid path");
-                        return;
+                        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                        {
+                            FileName = s,
+                            UseShellExecute = true,
+                            Verb = "open"
+                        });
                     }
-                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                    else if (System.IO.Directory.Exists(s))
                     {
-                        FileName = s,
-                        UseShellExecute = true,
-                        Verb = "open"
-                    });
+                        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                        {
+                            FileName = s,
+                            UseShellExecute = true,
+                            Verb = "open"
+                        });
+                    }
+
+                    else MessageBox.Show("Not a valid path.");
                 }
             }
             else MessageBox.Show("Incorrect Number of cells");

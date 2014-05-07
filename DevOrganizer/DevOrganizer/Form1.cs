@@ -248,6 +248,8 @@ namespace DevOrganizer
             this.tagsTextBox.Clear();
             this.authorsTextBox.Clear();
             this.descriptionTextBox.Clear();
+            this.tagsListBox.Items.Clear();
+            this.authorsListBox.Items.Clear();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)

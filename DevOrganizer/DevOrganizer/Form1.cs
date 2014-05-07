@@ -43,11 +43,11 @@ namespace DevOrganizer
             string[] tags = SearchBox.Text.Split(delimiterChars);
             if (tags.Length == 1)
             {
-                this.fileTagsTableAdapter.FillByFilepathsWithTag(this.devOrgDBDataSet.FileTags, tags[0]);
+                this.fileTagsTableAdapter.FillByFilepathsWithTag(this.devOrgDBDataSet.FileTags, "%"+tags[0]+"%");
             }
             else if (tags.Length == 2)
             {
-                this.fileTagsTableAdapter.FillByFilepathsWithTwoTags(this.devOrgDBDataSet.FileTags, tags[0], tags[1]);
+                this.fileTagsTableAdapter.FillByFilepathsWithTwoTags(this.devOrgDBDataSet.FileTags, "%"+tags[0]+"%", "%"+tags[1]+"%");
             }
             else if (tags.Length >= 3)
             {
@@ -55,7 +55,7 @@ namespace DevOrganizer
                 {
                     MessageBox.Show("Omitting search to three tags.");
                 }
-                this.fileTagsTableAdapter.FillByFilepathsWithThreeTags(this.devOrgDBDataSet.FileTags, tags[0], tags[1], tags[2]);
+                this.fileTagsTableAdapter.FillByFilepathsWithThreeTags(this.devOrgDBDataSet.FileTags, "%"+tags[0]+"%", "%"+tags[1]+"%", "%"+tags[2]+"%");
             }
 
            // this.tabControl1.SelectedTab.Text = SearchBox.Text;

@@ -2,14 +2,16 @@
 <xs:schema id="DevOrgDBDataSet" targetNamespace="http://tempuri.org/DevOrgDBDataSet.xsd" xmlns:mstns="http://tempuri.org/DevOrgDBDataSet.xsd" xmlns="http://tempuri.org/DevOrgDBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DevOrgDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DevOrgDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DevOrganizer.Properties.Settings.GlobalReference.Default.DevOrgDBConnectionString" Provider="System.Data.SQLite" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DevOrgDBConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DevOrgDBConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DevOrganizer.Properties.Settings.GlobalReference.Default.DevOrgDBConnectionString1" Provider="System.Data.SQLite" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DevOrgDBConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DevOrgDBConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DevOrganizer.Properties.Settings.GlobalReference.Default.DevOrgDBConnectionString2" Provider="System.Data.SQLite" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FileTagsTableAdapter" GeneratorDataComponentClassName="FileTagsTableAdapter" Name="FileTags" UserDataComponentName="FileTagsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DevOrgDBConnectionString (Settings)" DbObjectName="main.FileTags" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DevOrgDBConnectionString2 (Settings)" DbObjectName="main.FileTags" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO [FileTags] ([filepath], [tags], [author], [description]) VALUES (@filepath, @tags, @author, @description)</CommandText>
@@ -36,7 +38,7 @@
               <Mapping SourceColumn="description" DataSetColumn="description" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="DevOrgDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteFilepath" Modifier="Public" Name="DeleteFilepath" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteFilepath">
+              <DbSource ConnectionRef="DevOrgDBConnectionString2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteFilepath" Modifier="Public" Name="DeleteFilepath" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteFilepath">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM FileTags
@@ -47,7 +49,7 @@ WHERE filepath = @pathString</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="DevOrgDBConnectionString (Settings)" DbObjectName="main.FileTags" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByFilepathsWithTag" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetFilepathsWithTag" GeneratorSourceName="FillByFilepathsWithTag" GetMethodModifier="Public" GetMethodName="GetFilepathsWithTag" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetFilepathsWithTag" UserSourceName="FillByFilepathsWithTag">
+              <DbSource ConnectionRef="DevOrgDBConnectionString2 (Settings)" DbObjectName="main.FileTags" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByFilepathsWithTag" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetFilepathsWithTag" GeneratorSourceName="FillByFilepathsWithTag" GetMethodModifier="Public" GetMethodName="GetFilepathsWithTag" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetFilepathsWithTag" UserSourceName="FillByFilepathsWithTag">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT author, description, filepath, tags FROM FileTags WHERE (tags LIKE @tag1)</CommandText>
@@ -57,7 +59,7 @@ WHERE filepath = @pathString</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DevOrgDBConnectionString (Settings)" DbObjectName="main.FileTags" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByFilepathsWithThreeTags" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetFilepathsWithThreeTags" GeneratorSourceName="FillByFilepathsWithThreeTags" GetMethodModifier="Public" GetMethodName="GetFilepathsWithThreeTags" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetFilepathsWithThreeTags" UserSourceName="FillByFilepathsWithThreeTags">
+              <DbSource ConnectionRef="DevOrgDBConnectionString2 (Settings)" DbObjectName="main.FileTags" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByFilepathsWithThreeTags" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetFilepathsWithThreeTags" GeneratorSourceName="FillByFilepathsWithThreeTags" GetMethodModifier="Public" GetMethodName="GetFilepathsWithThreeTags" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetFilepathsWithThreeTags" UserSourceName="FillByFilepathsWithThreeTags">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT author, description, filepath, tags FROM FileTags WHERE (tags LIKE @tag1) AND (tags LIKE @tag2) AND (tags LIKE @tag3)</CommandText>
@@ -69,7 +71,7 @@ WHERE filepath = @pathString</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DevOrgDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByFilepathsWithTwoTags" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetFilepathsWithTwoTags" GeneratorSourceName="FillByFilepathsWithTwoTags" GetMethodModifier="Public" GetMethodName="GetFilepathsWithTwoTags" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetFilepathsWithTwoTags" UserSourceName="FillByFilepathsWithTwoTags">
+              <DbSource ConnectionRef="DevOrgDBConnectionString2 (Settings)" DbObjectName="main.FileTags" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByFilepathsWithTwoTags" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetFilepathsWithTwoTags" GeneratorSourceName="FillByFilepathsWithTwoTags" GetMethodModifier="Public" GetMethodName="GetFilepathsWithTwoTags" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetFilepathsWithTwoTags" UserSourceName="FillByFilepathsWithTwoTags">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT author, description, filepath, tags FROM FileTags WHERE (tags LIKE @tag1) AND (tags LIKE @tag2)</CommandText>
@@ -80,7 +82,7 @@ WHERE filepath = @pathString</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DevOrgDBConnectionString (Settings)" DbObjectName="main.FileTags" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillTable" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetTable" GeneratorSourceName="FillTable" GetMethodModifier="Public" GetMethodName="GetTable" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetTable" UserSourceName="FillTable">
+              <DbSource ConnectionRef="DevOrgDBConnectionString2 (Settings)" DbObjectName="main.FileTags" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillTable" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetTable" GeneratorSourceName="FillTable" GetMethodModifier="Public" GetMethodName="GetTable" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetTable" UserSourceName="FillTable">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT author, description, filepath, tags FROM FileTags</CommandText>
@@ -88,7 +90,7 @@ WHERE filepath = @pathString</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="DevOrgDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertTag" Modifier="Public" Name="InsertTag" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertTag">
+              <DbSource ConnectionRef="DevOrgDBConnectionString2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertTag" Modifier="Public" Name="InsertTag" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertTag">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [FileTags] ([filepath], [tags]) 
@@ -100,7 +102,7 @@ VALUES (@pathString, @tagString)</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="DevOrgDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertTuple" Modifier="Public" Name="InsertTuple" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertTuple">
+              <DbSource ConnectionRef="DevOrgDBConnectionString2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertTuple" Modifier="Public" Name="InsertTuple" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertTuple">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [FileTags] ([sync], [filepath], [tags], [author], [description]) VALUES (@sync, @filepath, @tags, @author, @description)</CommandText>
@@ -114,7 +116,7 @@ VALUES (@pathString, @tagString)</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="DevOrgDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateAuthor" Modifier="Public" Name="UpdateAuthor" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateAuthor">
+              <DbSource ConnectionRef="DevOrgDBConnectionString2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateAuthor" Modifier="Public" Name="UpdateAuthor" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateAuthor">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE FileTags
@@ -127,7 +129,7 @@ WHERE filepath = @pathString</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="DevOrgDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateDescription" Modifier="Public" Name="UpdateDescription" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateDescription">
+              <DbSource ConnectionRef="DevOrgDBConnectionString2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateDescription" Modifier="Public" Name="UpdateDescription" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateDescription">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE FileTags
@@ -140,7 +142,7 @@ WHERE filepath = @pathString</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="DevOrgDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateFilePath" Modifier="Public" Name="UpdateFilePath" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdateFilePath">
+              <DbSource ConnectionRef="DevOrgDBConnectionString2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateFilePath" Modifier="Public" Name="UpdateFilePath" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdateFilePath">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE FileTags
@@ -153,7 +155,7 @@ WHERE filepath = @oldPathString</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="DevOrgDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateSync" Modifier="Public" Name="UpdateSync" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="UpdateSync">
+              <DbSource ConnectionRef="DevOrgDBConnectionString2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateSync" Modifier="Public" Name="UpdateSync" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="UpdateSync">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE FileTags
@@ -166,7 +168,7 @@ WHERE filepath = @pathString</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="DevOrgDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateTags" Modifier="Public" Name="UpdateTags" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="UpdateTags">
+              <DbSource ConnectionRef="DevOrgDBConnectionString2 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateTags" Modifier="Public" Name="UpdateTags" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="UpdateTags">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE FileTags
@@ -189,7 +191,7 @@ WHERE filepath = @pathString</CommandText>
   <xs:element name="DevOrgDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DevOrgDBDataSet" msprop:Generator_UserDSName="DevOrgDBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="FileTags" msprop:Generator_TableClassName="FileTagsDataTable" msprop:Generator_TableVarName="tableFileTags" msprop:Generator_TablePropName="FileTags" msprop:Generator_RowDeletingName="FileTagsRowDeleting" msprop:Generator_RowChangingName="FileTagsRowChanging" msprop:Generator_RowEvHandlerName="FileTagsRowChangeEventHandler" msprop:Generator_RowDeletedName="FileTagsRowDeleted" msprop:Generator_UserTableName="FileTags" msprop:Generator_RowChangedName="FileTagsRowChanged" msprop:Generator_RowEvArgName="FileTagsRowChangeEvent" msprop:Generator_RowClassName="FileTagsRow">
+        <xs:element name="FileTags" msprop:Generator_TableClassName="FileTagsDataTable" msprop:Generator_TableVarName="tableFileTags" msprop:Generator_RowChangedName="FileTagsRowChanged" msprop:Generator_TablePropName="FileTags" msprop:Generator_RowDeletingName="FileTagsRowDeleting" msprop:Generator_RowChangingName="FileTagsRowChanging" msprop:Generator_RowEvHandlerName="FileTagsRowChangeEventHandler" msprop:Generator_RowDeletedName="FileTagsRowDeleted" msprop:Generator_RowClassName="FileTagsRow" msprop:Generator_UserTableName="FileTags" msprop:Generator_RowEvArgName="FileTagsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="sync" msprop:Generator_ColumnVarNameInTable="columnsync" msprop:Generator_ColumnPropNameInRow="sync" msprop:Generator_ColumnPropNameInTable="syncColumn" msprop:Generator_UserColumnName="sync" type="xs:long" minOccurs="0" />

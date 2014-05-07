@@ -26,11 +26,32 @@ namespace DevOrganizer.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("data source=C:\\Users\\wernerjc1\\Documents\\GitHub\\DevOrganizer\\DevOrganizer\\DevOrga" +
-            "nizer\\DevOrgDB;datetimeformat=JulianDay")]
+        [global::System.Configuration.DefaultSettingValueAttribute("data source=DevOrgDB;datetimeformat=JulianDay")]
         public string DevOrgDBConnectionString {
             get {
                 return ((string)(this["DevOrgDBConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("data source=C:\\Users\\wernerjc1\\Documents\\GitHub\\DevOrganizer\\DevOrganizer\\DevOrga" +
+            "nizer\\bin\\Debug\\DevOrgDB")]
+        public string DevOrgDBConnectionString1 {
+            get {
+                return ((string)(this["DevOrgDBConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("data source=\"C:\\Users\\wernerjc1\\Documents\\GitHub\\DevOrganizer\\DevOrganizer\\Hope T" +
+            "his Works\\DevOrgDB\"")]
+        public string DevOrgDBConnectionString2 {
+            get {
+                return ((string)(this["DevOrgDBConnectionString2"]));
             }
         }
     }

@@ -5,10 +5,26 @@
     <Setting Name="DevOrgDBConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;data source=C:\Users\wernerjc1\Documents\GitHub\DevOrganizer\DevOrganizer\DevOrganizer\DevOrgDB;datetimeformat=JulianDay&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;data source=DevOrgDB;datetimeformat=JulianDay&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SQLite&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">data source=C:\Users\wernerjc1\Documents\GitHub\DevOrganizer\DevOrganizer\DevOrganizer\DevOrgDB;datetimeformat=JulianDay</Value>
+      <Value Profile="(Default)">data source=DevOrgDB;datetimeformat=JulianDay</Value>
+    </Setting>
+    <Setting Name="DevOrgDBConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;data source=C:\Users\wernerjc1\Documents\GitHub\DevOrganizer\DevOrganizer\DevOrganizer\bin\Debug\DevOrgDB&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SQLite&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">data source=C:\Users\wernerjc1\Documents\GitHub\DevOrganizer\DevOrganizer\DevOrganizer\bin\Debug\DevOrgDB</Value>
+    </Setting>
+    <Setting Name="DevOrgDBConnectionString2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;data source="C:\Users\wernerjc1\Documents\GitHub\DevOrganizer\DevOrganizer\Hope This Works\DevOrgDB"&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SQLite&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">data source="C:\Users\wernerjc1\Documents\GitHub\DevOrganizer\DevOrganizer\Hope This Works\DevOrgDB"</Value>
     </Setting>
   </Settings>
 </SettingsFile>

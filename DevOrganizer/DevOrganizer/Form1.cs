@@ -243,6 +243,11 @@ namespace DevOrganizer
                 this.fileTagsTableAdapter.InsertTuple("1", pathEntry, tagEntry, authorEntry, descEntry);
                 MessageBox.Show("Project Added!");
             }
+
+            this.pathTextBox.Clear();
+            this.tagsTextBox.Clear();
+            this.authorsTextBox.Clear();
+            this.descriptionTextBox.Clear();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)

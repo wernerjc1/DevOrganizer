@@ -654,20 +654,27 @@ namespace DevOrganizer
 
         private void editFilepathButton_Click(object sender, EventArgs e)
         {
-            string fileStr = dataGridView1.SelectedCells[0].Value.ToString();
-            string tagsStr = dataGridView1.SelectedCells[1].Value.ToString();
-            string authStr = dataGridView1.SelectedCells[2].Value.ToString();
-            string descStr = dataGridView1.SelectedCells[3].Value.ToString();
+            if (!(dataGridView1.SelectedRows.Count > 1))
+            {
+                string fileStr = dataGridView1.SelectedCells[0].Value.ToString();
+                string tagsStr = dataGridView1.SelectedCells[1].Value.ToString();
+                string authStr = dataGridView1.SelectedCells[2].Value.ToString();
+                string descStr = dataGridView1.SelectedCells[3].Value.ToString();
 
-            string promptStr = "Current filepath: " + fileStr + "\n\nEnter a new filepath:";
+                string promptStr = "Current filepath: " + fileStr + "\n\nEnter a new filepath:";
 
-            string promptValue = Prompt.ShowDialog(promptStr, "Edit Filepath");
+                string promptValue = Prompt.ShowDialog(promptStr, "Edit Filepath");
 
-            this.fileTagsTableAdapter.InsertTuple("1", promptValue, tagsStr, authStr, descStr);
-            fileTagsTableAdapter.DeleteFilepath(fileStr);
+                this.fileTagsTableAdapter.InsertTuple("1", promptValue, tagsStr, authStr, descStr);
+                fileTagsTableAdapter.DeleteFilepath(fileStr);
 
-            this.devOrgDBDataSet.Clear();
-            this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags); 
+                this.devOrgDBDataSet.Clear();
+                this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags);
+            }
+            else
+            {
+                MessageBox.Show("Error: Too many rows selected");
+            }
         }
 
     }

@@ -1,0 +1,2 @@
+Before running DevOrganizer for the first time, please first run 
+the SQLite-1.0.66.0-setup.exe and be sure to get the Visual Studio 2010 plugin.

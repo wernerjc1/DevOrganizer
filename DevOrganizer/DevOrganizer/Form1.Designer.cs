@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gAYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideToSystemTrayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +50,7 @@
             this.hoursMenuItem_15 = new System.Windows.Forms.ToolStripMenuItem();
             this.hoursMenuItem_24 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.readMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.addTab = new System.Windows.Forms.TabPage();
@@ -71,16 +72,13 @@
             this.FileOption = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.DatabaseTab = new System.Windows.Forms.TabPage();
+            this.editFilepathButton = new System.Windows.Forms.Button();
             this.copiedLabel = new System.Windows.Forms.Label();
             this.updateButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.filepathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tagsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.devOrgDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.devOrgDBDataSet = new DevOrganizer.DevOrgDBDataSet();
             this.fileTagsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -100,7 +98,10 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.authorsContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.readMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filepathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tagsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.author = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.addTab.SuspendLayout();
@@ -279,6 +280,13 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // readMeToolStripMenuItem
+            // 
+            this.readMeToolStripMenuItem.Name = "readMeToolStripMenuItem";
+            this.readMeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.readMeToolStripMenuItem.Text = "ReadMe";
+            this.readMeToolStripMenuItem.Click += new System.EventHandler(this.readMeToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
@@ -493,6 +501,7 @@
             // 
             // DatabaseTab
             // 
+            this.DatabaseTab.Controls.Add(this.editFilepathButton);
             this.DatabaseTab.Controls.Add(this.copiedLabel);
             this.DatabaseTab.Controls.Add(this.updateButton);
             this.DatabaseTab.Controls.Add(this.button3);
@@ -508,10 +517,20 @@
             this.DatabaseTab.Text = "Database View";
             this.DatabaseTab.UseVisualStyleBackColor = true;
             // 
+            // editFilepathButton
+            // 
+            this.editFilepathButton.Location = new System.Drawing.Point(11, 146);
+            this.editFilepathButton.Name = "editFilepathButton";
+            this.editFilepathButton.Size = new System.Drawing.Size(75, 38);
+            this.editFilepathButton.TabIndex = 8;
+            this.editFilepathButton.Text = "Edit Filepath";
+            this.editFilepathButton.UseVisualStyleBackColor = true;
+            this.editFilepathButton.Click += new System.EventHandler(this.editFilepathButton_Click);
+            // 
             // copiedLabel
             // 
             this.copiedLabel.AutoSize = true;
-            this.copiedLabel.Location = new System.Drawing.Point(23, 190);
+            this.copiedLabel.Location = new System.Drawing.Point(22, 234);
             this.copiedLabel.Name = "copiedLabel";
             this.copiedLabel.Size = new System.Drawing.Size(46, 14);
             this.copiedLabel.TabIndex = 7;
@@ -529,7 +548,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(11, 146);
+            this.button3.Location = new System.Drawing.Point(11, 190);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 41);
             this.button3.TabIndex = 5;
@@ -579,37 +598,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.onFilepathDoubleClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
-            // 
-            // filepathDataGridViewTextBoxColumn
-            // 
-            this.filepathDataGridViewTextBoxColumn.DataPropertyName = "filepath";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.filepathDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.filepathDataGridViewTextBoxColumn.HeaderText = "filepath";
-            this.filepathDataGridViewTextBoxColumn.Name = "filepathDataGridViewTextBoxColumn";
-            this.filepathDataGridViewTextBoxColumn.ReadOnly = true;
-            this.filepathDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // tagsDataGridViewTextBoxColumn
-            // 
-            this.tagsDataGridViewTextBoxColumn.DataPropertyName = "tags";
-            this.tagsDataGridViewTextBoxColumn.HeaderText = "tags";
-            this.tagsDataGridViewTextBoxColumn.Name = "tagsDataGridViewTextBoxColumn";
-            this.tagsDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // author
-            // 
-            this.author.DataPropertyName = "author";
-            this.author.HeaderText = "author";
-            this.author.Name = "author";
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "description";
-            this.description.HeaderText = "description";
-            this.description.Name = "description";
-            this.description.Width = 300;
             // 
             // devOrgDBDataSetBindingSource
             // 
@@ -736,12 +724,36 @@
             this.deleteToolStripMenuItem1.Text = "Delete";
             this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
             // 
-            // readMeToolStripMenuItem
+            // filepathDataGridViewTextBoxColumn
             // 
-            this.readMeToolStripMenuItem.Name = "readMeToolStripMenuItem";
-            this.readMeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.readMeToolStripMenuItem.Text = "ReadMe";
-            this.readMeToolStripMenuItem.Click += new System.EventHandler(this.readMeToolStripMenuItem_Click);
+            this.filepathDataGridViewTextBoxColumn.DataPropertyName = "filepath";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.filepathDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.filepathDataGridViewTextBoxColumn.HeaderText = "filepath";
+            this.filepathDataGridViewTextBoxColumn.Name = "filepathDataGridViewTextBoxColumn";
+            this.filepathDataGridViewTextBoxColumn.ReadOnly = true;
+            this.filepathDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // tagsDataGridViewTextBoxColumn
+            // 
+            this.tagsDataGridViewTextBoxColumn.DataPropertyName = "tags";
+            this.tagsDataGridViewTextBoxColumn.HeaderText = "tags";
+            this.tagsDataGridViewTextBoxColumn.Name = "tagsDataGridViewTextBoxColumn";
+            this.tagsDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // author
+            // 
+            this.author.DataPropertyName = "author";
+            this.author.HeaderText = "author";
+            this.author.Name = "author";
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "description";
+            this.description.Name = "description";
+            this.description.Width = 300;
             // 
             // Form1
             // 
@@ -839,10 +851,6 @@
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Label copiedLabel;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn filepathDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tagsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn author;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem timerOnOffToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem timerOnMenuItem;
@@ -863,6 +871,11 @@
         private System.Windows.Forms.ContextMenuStrip authorsContextMenu;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem readMeToolStripMenuItem;
+        private System.Windows.Forms.Button editFilepathButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filepathDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tagsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn author;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
     }
 }
 

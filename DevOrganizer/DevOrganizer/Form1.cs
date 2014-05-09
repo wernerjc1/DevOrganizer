@@ -651,5 +651,24 @@ namespace DevOrganizer
                 Verb = "open"
             });
         }
+
+        private void editFilepathButton_Click(object sender, EventArgs e)
+        {
+            string fileStr = dataGridView1.SelectedCells[0].Value.ToString();
+            string tagsStr = dataGridView1.SelectedCells[1].Value.ToString();
+            string authStr = dataGridView1.SelectedCells[2].Value.ToString();
+            string descStr = dataGridView1.SelectedCells[3].Value.ToString();
+
+            string promptStr = "Current filepath: " + fileStr + "\n\nEnter a new filepath:";
+
+            string promptValue = Prompt.ShowDialog(promptStr, "Edit Filepath");
+
+            this.fileTagsTableAdapter.InsertTuple("1", promptValue, tagsStr, authStr, descStr);
+            fileTagsTableAdapter.DeleteFilepath(fileStr);
+
+            this.devOrgDBDataSet.Clear();
+            this.fileTagsTableAdapter.Fill(this.devOrgDBDataSet.FileTags); 
+        }
+
     }
 }

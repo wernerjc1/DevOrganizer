@@ -654,13 +654,19 @@ namespace DevOrganizer
 
         private void editFilepathButton_Click(object sender, EventArgs e)
         {
+            string fileStr = "";
+            string tagsStr = "";
+            string authStr = "";
+            string descStr = "";
+            
             if (!(dataGridView1.SelectedRows.Count > 1))
             {
-                string fileStr = dataGridView1.SelectedCells[0].Value.ToString();
-                string tagsStr = dataGridView1.SelectedCells[1].Value.ToString();
-                string authStr = dataGridView1.SelectedCells[2].Value.ToString();
-                string descStr = dataGridView1.SelectedCells[3].Value.ToString();
-
+                int row = dataGridView1.SelectedCells[0].RowIndex;
+                fileStr = dataGridView1[0, row].Value.ToString();
+                tagsStr = dataGridView1[1, row].Value.ToString();
+                authStr = dataGridView1[2, row].Value.ToString();
+                descStr = dataGridView1[3, row].Value.ToString();
+            
                 string promptStr = "Current filepath: " + fileStr + "\n\nEnter a new filepath:";
 
                 string promptValue = Prompt.ShowDialog(promptStr, "Edit Filepath");
@@ -674,6 +680,7 @@ namespace DevOrganizer
             else
             {
                 MessageBox.Show("Error: Too many rows selected");
+                return;
             }
         }
 

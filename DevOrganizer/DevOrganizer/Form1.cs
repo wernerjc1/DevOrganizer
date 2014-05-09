@@ -670,6 +670,19 @@ namespace DevOrganizer
                 string promptStr = "Current filepath: " + fileStr + "\n\nEnter a new filepath:";
 
                 string promptValue = Prompt.ShowDialog(promptStr, "Edit Filepath");
+                if (promptValue == "")
+                {
+                    MessageBox.Show("Empty file path.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    if (dataGridView1[0, i].Value.ToString() == promptValue)
+                    {
+                        MessageBox.Show("File path already exists in the database.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
 
                 this.fileTagsTableAdapter.InsertTuple("1", promptValue, tagsStr, authStr, descStr);
                 fileTagsTableAdapter.DeleteFilepath(fileStr);
@@ -679,7 +692,6 @@ namespace DevOrganizer
             }
             else
             {
-                MessageBox.Show("Error: Too many rows selected");
                 return;
             }
         }
